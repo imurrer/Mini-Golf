@@ -29,4 +29,6 @@ class Golf {
     float arrowx, arrowy;
     float millcentX, millcentY, triX1, triY1, triX2, triY2;
     float angmill1, angmill2, radmill;
+    float angmill, radmill;
+    float radline, angline;
 };

@@ -16,6 +16,7 @@ Golf::Golf() {
    angmill1 = acos((triX2-millcentX)/radmill);
 	 angmill2 = angmill1+2*atan((triX2-triX1)*.5/radmill);
    arrowx = 300, arrowy =675;
+   radline =pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5), angline = M_PI/2;
 }
 
 Golf::~Golf() { }
@@ -74,22 +75,32 @@ void Golf::changearrow(char c){
       //rotateMill();
       if (c == 'R') { //up
          if (arrowy > 600) {
- 	        arrowy = arrowy -5;
+           if (angline != (M_PI/2)) 
+           arrowx = arrowx+5*(cos(angline));
+           else 
+           arrowy = arrowy-5;  
          }
       }
-      if (c == 'Q') { //down
+      if (c == 'Q') { //left
           if (arrowx > 200) {
-            arrowx = arrowx - 5;
+            angline = angline + (M_PI/16);
+            arrowx = arrowx+(radline)*cos(angline);
+            arrowy = arrowy+(radline)*sin(angline - (M_PI/16))- radline*sin(angline);
           }
        }
-      if (c == 'S') {  //left
+      if (c == 'S') {  //right
           if (arrowx < 400) {
-            arrowx = arrowx + 5;
+             angline = angline - (M_PI/16);
+             arrowx = arrowx+(radline)*cos(angline);
+             arrowy = arrowy+(radline)*sin(angline+ (M_PI/16)) - radline*sin(angline);
           }
       }
-      if (c == 'T') { //right
+      if (c == 'T') { //down
          if (arrowy < 735) {
-            arrowy = arrowy + 5;
+            if (angline != (M_PI/2))
+              arrowx = arrowx+5*(cos(angline));
+            else
+              arrowy = arrowy-5;
          }
       }
       if (c==32) { //release
