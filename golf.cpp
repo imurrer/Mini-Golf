@@ -14,6 +14,7 @@ Golf::Golf() {
    millcentX = 300, millcentY = 400, triX1 = 270, triY1 = 250, triX2 = 330, triY2 = 250;
    radmill = pow(pow(millcentX-triX2, 2)+pow(millcentY-triY2, 2), .5);
    angmill = asin((millcentX-triX2)/radmill);
+   arrowx = 300, arrowy =675;
 }
 
 Golf::~Golf() { }
@@ -56,11 +57,45 @@ void Golf::rotateMill() {
   angmill+=M_PI/6;
   triX1 = triX1-(radmill*(cos(angmill-M_PI/6)-cos(angmill)));
   triY1 = triY1+(radmill*(sin(angmill-M_PI/6)-sin(angmill)));
- // triX2 = triX2+(radmill*(cos(angmill-M_PI/6)-cos(angmill)));
- // triY2 = triY2-(radmill*(sin(angmill-M_PI/6)-sin(angmill)));
-   cout << radmill << " " << angmill << endl;
+  triX2 = triX2+(radmill*(cos(angmill-M_PI/6)-cos(angmill)));
+  triY2 = triY2-(radmill*(sin(angmill-M_PI/6)-sin(angmill)));
 }
 
+void Golf::displayarrow() {
+   gfx_color(24, 60, 242);
+   gfx_line(ballx, bally, arrowx, arrowy);
+}
+
+void Golf::changearrow(char c){  
+   while (true) {	
+      if (c== ‘R’) { //up
+         if (arrowy > 600) {
+ 	        arrowy = arrowy -5;
+         }
+      }
+      if (c == ’S’) { //down
+          if (arrowy < 735) {
+            arrowy = arrowy +5;
+          }
+       }
+      if (c == ’T’) {  //left
+          if (arrowx > 200) {
+            arrowx = arrowx -5;
+          }
+      }
+      if (c==‘Q’) { //right
+         if (arrowx < 400) {
+            arrowx = arrow +5;
+         }
+      }
+      if (c==32) { //release
+          releaseball();
+          break;
+       }
+      gfx_line(ballx, bally, arrowx, arrowy);
+      c= gfx_wait();
+      }
+}
 /*
 bool Golf::throughMill() {
   
