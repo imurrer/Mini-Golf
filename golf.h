@@ -18,5 +18,6 @@ class Golf {
     float bx, by, ty, tx, l, w;
     float mx, my, ml, mw;
     float hx, hy, hw, hl, a1, a2;
+    float ballx, bally, ballrad;
     float arrowX, arrowY;
 };
