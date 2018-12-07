@@ -75,21 +75,21 @@ void Golf::changearrow(char c){
       if (c == 'R') { //up
          if (arrowy > 600) {
            if (angline != (M_PI/2)) 
-           arrowx = arrowx+5*(cos(angline));
-           else 
+           arrowx = arrowx+(5+rad)*(cos(angline));
+           else if (angline == M_PI/2)
            arrowy = arrowy-5;  
          }
       }
       if (c == 'Q') { //left
           if (arrowx > 200) {
-            angline = angline + (M_PI/16);
-            arrowx = arrowx+(radline)*cos(angline);
+            angline = angline - (M_PI/16);
+            arrowx = arrowx-(radline)*cos(angline);
             arrowy = arrowy+(radline)*sin(angline - (M_PI/16))- radline*sin(angline);
           }
        }
       if (c == 'S') {  //right
           if (arrowx < 400) {
-             angline = angline - (M_PI/16);
+             angline = angline + (M_PI/16);
              arrowx = arrowx+(radline)*cos(angline);
              arrowy = arrowy+(radline)*sin(angline+ (M_PI/16)) - radline*sin(angline);
           }
@@ -97,9 +97,9 @@ void Golf::changearrow(char c){
       if (c == 'T') { //down
          if (arrowy < 735) {
             if (angline != (M_PI/2))
-              arrowx = arrowx+5*(cos(angline));
-            else
-              arrowy = arrowy-5;
+              arrowx = arrowx+(5+rad)*(cos(angline));
+            else if (angline == M_PI/2)
+              arrowy = arrowy+5;
          }
       }
       if (c==32) { //release
