@@ -1,7 +1,7 @@
 //main.cpp
 // Bella Murrer and Hannah Sarkey
 
-#include "gfx2.h"
+#include "gfx3.h"
 #include <iostream>
 using namespace std;
 
