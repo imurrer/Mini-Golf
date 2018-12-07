@@ -2,8 +2,6 @@
 //Bella Murrer and Hannah Sarkey
 
 #include "golf.h"
-#include <iostream>
-using namespace std;
 
 Golf::Golf() {
    float ballx = 300, bally = 740, ballrad = 7.5;
