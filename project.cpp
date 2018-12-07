@@ -15,9 +15,9 @@ int main() {
         h1.display();
         h1.rotateMill();
         h1.displayarrow();
-        if ((c=='R') || (c=='S') || (c=='T') || (c=='Q')) {
-          h1.changearrow(c);
-        }
+        //if ((c=='R') || (c=='S') || (c=='T') || (c=='Q')) {
+        //  h1.changearrow(c);
+        //}
       // if (c== '32') { //space bar to release ball
        //  h1.releaseball();
       // }
