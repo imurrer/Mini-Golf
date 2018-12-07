@@ -11,11 +11,10 @@ int main() {
   gfx_open(600, 800, "Putt Putt");
   
   while (loop) {
-    c= gfx_wait();
     gfx_clear();
     //switch(c) {
-     //   case '
-    
+     //   case 
+      
     float bx = 100, by = 550;
     float mx = 200, my = 250;
     float tx = 100, ty = 50;
@@ -30,11 +29,13 @@ int main() {
     
     gfx_color(0, 0, 0);
     gfx_fill_arc(hx, hy, hw, hl, a1, a2);
-    
-    if (c == 'q') {
-      break;
-    }
-    }
+      if (gfx_event_waiting()) {
+       c = gfx_wait();
+       if (c == 'q') {
+       break;
+       }
+     }
   }
+}
     
     
