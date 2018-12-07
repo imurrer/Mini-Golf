@@ -12,17 +12,18 @@ int main() {
   while (loop) {
      if (gfx_event_waiting()) {
        c = gfx_wait();
+        h1.display();
+        h1.rotateMill();
+       if ((c=='R') || (c=='S') || (c=='T') || (c=='Q')) {
+         h1.displayarrow(c);
+       }
+       if (c== '32') { //space bar to release ball
+         h1.releaseball();
+       }
        if (c == 'q') {
          break;
        }
      }
-     h1.display();
-     h1.rotateMill();
-     
-    //switch(c) {
-     //   case 
-   
-  }
 }
     
     
