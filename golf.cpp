@@ -72,7 +72,10 @@ void Golf::changearrow(char c){
       //rotateMill();
       if (c == 'R') { //up
          if (arrowy > 600) {
+           if (angline != (M_PI/2)) 
            arrowx = arrowx+5*(cos(angline));
+           else 
+           arrowy = arrow y-5;  
          }
       }
       if (c == 'Q') { //left
@@ -91,7 +94,10 @@ void Golf::changearrow(char c){
       }
       if (c == 'T') { //down
          if (arrowy < 735) {
-            arrowy = arrowy+5*(cos(angline));
+            if (angline != (M_PI/2))
+              arrowx = arrowx+5*(cos(angline));
+            else
+              arrowy = arrowy-5;
          }
       }
       if (c==32) { //release
