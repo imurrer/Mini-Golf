@@ -85,7 +85,8 @@ void Golf::changearrow(char c){
       //rotateMill();
          arrowx = gfx_xpos();
          arrowy = gfx_ypos();
-         if (arrowy > 475) {
+         cout << arrowx << arrowy << endl;
+         if (arrowx > 475) {
            arrowx = 475;
           }
           if (arrowx < 325) {
