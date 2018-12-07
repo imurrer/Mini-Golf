@@ -48,10 +48,10 @@ int main() {
     gfx_color(0,43,4); // dropoff line
     gfx_line(200, 250, 400 , 250);
     
-      if (gfx_event_waiting()) {
-       c = gfx_wait();
-       if (c == 'q') {
-       break;
+    //  if (gfx_event_waiting()) {
+     //  c = gfx_wait();
+      // if (c == 'q') {
+      // break;
        }
      }
  // }
