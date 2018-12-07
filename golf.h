@@ -19,4 +19,4 @@ class Golf {
     float mx, my, ml, mw;
     float hx, hy, hw, hl, a1, a2;
     float arrowX, arrowY;
-}
+};
