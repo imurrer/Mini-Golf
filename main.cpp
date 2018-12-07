@@ -26,6 +26,10 @@ int main() {
     gfx_fill_rectangle(mx, my, mw, ml);
     gfx_fill_rectangle(bx, by, l, w);
     
+    gfx_color(170, 184, 255);  //the windmill herself
+    gfx_fill_rectangle(250, 350, 100, 200);
+    
+    
     gfx_color(0, 0, 0); // hole arc & hole
     gfx_fill_arc(hx, hy, hw, hl, a1, a2);
     gfx_fill_circle(150, 100, 10);
