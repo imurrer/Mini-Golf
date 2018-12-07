@@ -28,7 +28,7 @@ int main() {
     
     gfx_color(0, 0, 0); // hole arc & hole
     gfx_fill_arc(hx, hy, hw, hl, a1, a2);
-    gfx_circle(150, 100, 10);
+    gfx_fill_circle(150, 100, 10);
 
     gfx_color(0,43,4); // dropoff line
     gfx_line(200, 250, 400 , 250);
