@@ -91,7 +91,6 @@ void Golf::changearrow(char c){
       }
       if (c==32) { //release
          // releaseball();
-          break;
        }
       gfx_line(ballx, bally, arrowx, arrowy);
       gfx_flush();
