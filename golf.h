@@ -2,6 +2,10 @@
 
 #include <iostream>
 #include "gfx3.h"
+#include <ustdlib>
+#include <cmath>
+#include <math.h>
+using namespace std;
 
 class Golf {
   public:
