@@ -20,4 +20,5 @@ class Golf {
     float hx, hy, hw, hl, a1, a2;
     float ballx, bally, ballrad;
     float arrowX, arrowY;
+    float millcentX, millcentY, triX1, triY1, triX2, triY2;
 };
