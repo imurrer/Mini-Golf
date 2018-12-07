@@ -12,7 +12,8 @@ Golf::Golf() {
    ml = 300, mw = 200;
    hx= 287.5 , hy= 537.5 , hl = 25, hw = 20, a1 =0, a2 =180;
    millcentX = 300, millcentY = 400, triX1 = 270, triY1 = 250, triX2 = 330, triY2 = 250;
-   angmill = 0;
+   radmill = ;
+   angmill = ;
 }
 
 Golf::~Golf() { }
