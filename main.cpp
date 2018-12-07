@@ -19,7 +19,7 @@ int main() {
     float tx = 100, ty = 50;
     float l = 400, w = 200;
     float ml = 300, mw = 200;
-    float hx= 287.5 , hy= 530 , hl = 25, hw = 20, a1 =0, a2 =180;
+    float hx= 287.5 , hy= 530 , hl = 25, hw = 30, a1 =0, a2 =180;
     
     gfx_color(29, 147, 41); // green course
     gfx_fill_rectangle(tx, ty, l, w);
@@ -28,7 +28,9 @@ int main() {
     
     gfx_color(170, 184, 255);  //the windmill herself
     gfx_fill_rectangle(250, 350, 100, 200);
-    
+    //her lucious triangles
+    //XPoint mypoints1[] = { {}, {}, {} };
+    //XPoint mypoints2[] = { {}, {}, {} };
     
     gfx_color(0, 0, 0); // hole arc & hole
     gfx_fill_arc(hx, hy, hw, hl, a1, a2);
