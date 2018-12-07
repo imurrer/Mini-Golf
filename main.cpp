@@ -24,7 +24,7 @@ int main() {
        if (c == 'q') {
          break;
        }
-     }
+    
      
     //switch(c) {
      //   case 
@@ -54,7 +54,7 @@ int main() {
 
     gfx_color(0,43,4); // dropoff line
     gfx_line(200, 250, 400 , 250);
-  
+     }
   }
 }
     
