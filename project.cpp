@@ -10,10 +10,11 @@ int main() {
   gfx_open(600, 800, "Putt Putt");
   
   while (loop) {
+     h1.display();
+     h1.rotateMill();
+     h1.displayarrow();
      if (gfx_event_waiting()) {
        c = gfx_wait();
-        h1.display();
-        h1.rotateMill();
         h1.displayarrow();
         //if ((c=='R') || (c=='S') || (c=='T') || (c=='Q')) {
         //  h1.changearrow(c);
@@ -24,10 +25,10 @@ int main() {
        if (c == 'q') {
          break;
        }
-       gfx_flush();
-       usleep(70000);
-       //gfx_clear();
      }
+     gfx_flush();
+     usleep(70000);
+     gfx_clear();
   }
 }
     
