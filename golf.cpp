@@ -65,7 +65,7 @@ void Golf::displayarrow() {
    gfx_color(24, 60, 242);
    gfx_line(ballx, bally, arrowx, arrowy);
 }
-/*
+
 void Golf::changearrow(char c){  
    while (true) {	
       if (c== ‘R’) { //up
@@ -95,7 +95,7 @@ void Golf::changearrow(char c){
       gfx_line(ballx, bally, arrowx, arrowy);
       c= gfx_wait();
       }
-}*/
+}
 /*
 bool Golf::throughMill() {
   
