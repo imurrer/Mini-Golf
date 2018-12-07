@@ -75,18 +75,18 @@ void Golf::changearrow(char c){
          }
       }
       if (c == 'Q') { //down
-          if (arrowy < 735) {
-            arrowy = arrowy +5;
+          if (arrowx > 200) {
+            arrowx = arrowx - 5;
           }
        }
       if (c == 'S') {  //left
-          if (arrowx > 200) {
-            arrowx = arrowx -5;
+          if (arrowx < 400) {
+            arrowx = arrowx + 5;
           }
       }
       if (c == 'T') { //right
-         if (arrowx < 400) {
-            arrowx = arrowx +5;
+         if (arrowy < 735) {
+            arrowy = arrowy + 5;
          }
       }
       if (c==32) { //release
