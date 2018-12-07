@@ -11,6 +11,7 @@ Golf::Golf() {
    l = 400, w = 200;
    ml = 300, mw = 200;
    hx= 287.5 , hy= 537.5 , hl = 25, hw = 20, a1 =0, a2 =180;
+   millcentX = 400, millcentY = 400, triX1 = 270, triY1 = 250, triX2 = 330, triY2 = 250;
 }
 
 Golf::~Golf() { }
@@ -43,11 +44,15 @@ void Golf::display() {
     gfx_line(200, 250, 400 , 250);
 }
 
-/*
+
 void Golf::rotateMill() {
-  
+  XPoint pt = {millcentX, millcentY};
+  XPoint mypoints1[] = { {millcentX, millcentY}, {triX1, triY1}, {triX2, triy2} };
+  int size1 = sizeof(mypoints1)/sizeof(pt);
+  gfx_fill_polygon(mypoints1, size1);
 }
 
+/*
 bool Golf::throughMill() {
   
 }
