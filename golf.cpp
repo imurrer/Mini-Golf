@@ -89,14 +89,14 @@ void Golf::changearrow(char c){
          if (arrowx > 475) {
            arrowx = 475;
           }
-          if (arrowx < 325) {
-            arrowx = 325;
+          if (arrowx < 125) {
+            arrowx = 125;
           }
           if (arrowy < 575) {
              arrowy = 575;
           }
-         if (arrowy > 625) {
-            arrowy = 625;
+         if (arrowy > 725) {
+            arrowy = 725;
          }
          if (c==32) { //release
           releaseball();
