@@ -24,8 +24,8 @@ int main() {
          break;
        }
        gfx_flush();
-       usleep(4000);
-       gfx_clear();
+       //usleep(4000);
+       //gfx_clear();
      }
   }
 }
