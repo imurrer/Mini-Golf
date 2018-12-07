@@ -45,7 +45,7 @@ void Golf::display() {
 
 
 void Golf::rotateMill() {
-  XPoint pt = {millcentX, millcentY};
+  XPoint pt = {(short)millcentX, (short)millcentY};
   XPoint mypoints1[] = { {(short)millcentX, (short)millcentY}, {(short)triX1, (short)triY1}, {(short)triX2, (short)triY2} };
   int size1 = sizeof(mypoints1)/sizeof(pt);
   gfx_fill_polygon(mypoints1, size1);
