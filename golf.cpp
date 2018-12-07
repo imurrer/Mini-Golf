@@ -54,7 +54,7 @@ void Golf::rotateMill() {
   gfx_color(192, 242, 247);
   gfx_fill_polygon(mypoints1, size1);
   angmill+=M_PI/3;
-  triX1 = triX1-(radmill*(cos(angmill-M_PI/3)-cos(angmill)));
+  triX1 = triX1+(radmill*(cos(angmill-M_PI/3)-cos(angmill)));
   triY1 = triY1-(radmill*(sin(angmill-M_PI/3)-sin(angmill)));
   triX2 = triX2+(radmill*(cos(angmill-M_PI/3)-cos(angmill)));
   triY2 = triY2-(radmill*(sin(angmill-M_PI/3)-sin(angmill)));
