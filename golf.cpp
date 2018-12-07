@@ -13,3 +13,24 @@ Golf::~Golf() {
 }
 
 
+void Golf::display() {
+  
+}
+
+void Golf::rotateMill() {
+  
+}
+
+bool Golf::throughMill() {
+  
+}
+
+float Golf::ballAngle() {
+
+}
+
+float Golf::ballSpeed() {
+
+}
+
+
