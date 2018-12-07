@@ -16,7 +16,7 @@ class Golf {
     void displayarrow();
     void changearrow(char);
     void releaseball();
-    void throughMill();
+    bool throughMill();
     /*void ballAngle();
     void ballSpeed();*/
   private:
