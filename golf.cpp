@@ -68,22 +68,22 @@ void Golf::displayarrow() {
 
 void Golf::changearrow(char c){  
    while (true) {	
-      if (c== ‘R’) { //up
+      if (c == 'R') { //up
          if (arrowy > 600) {
  	        arrowy = arrowy -5;
          }
       }
-      if (c == ’S’) { //down
+      if (c == 'S') { //down
           if (arrowy < 735) {
             arrowy = arrowy +5;
           }
        }
-      if (c == ’T’) {  //left
+      if (c == 'T') {  //left
           if (arrowx > 200) {
             arrowx = arrowx -5;
           }
       }
-      if (c==‘Q’) { //right
+      if (c == 'Q') { //right
          if (arrowx < 400) {
             arrowx = arrowx +5;
          }
