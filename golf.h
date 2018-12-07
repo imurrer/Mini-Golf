@@ -14,7 +14,7 @@ class Golf {
     void display();
     void rotateMill(); 
     void displayarrow();
-    //void changearrow(char);
+    void changearrow(char);
     /*
     void releaseball();
     void throughMill();
