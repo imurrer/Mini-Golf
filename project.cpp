@@ -17,7 +17,7 @@ int main() {
        }
      }
      h1.display();
-     h1.rotatemill();
+     h1.rotateMill();
      
     //switch(c) {
      //   case 
