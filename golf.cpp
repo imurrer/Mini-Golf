@@ -12,6 +12,7 @@ Golf::Golf() {
    ml = 300, mw = 200;
    hx= 287.5 , hy= 537.5 , hl = 25, hw = 20, a1 =0, a2 =180;
    millcentX = 300, millcentY = 400, triX1 = 270, triY1 = 250, triX2 = 330, triY2 = 250;
+   angmill = 0;
 }
 
 Golf::~Golf() { }
@@ -45,14 +46,13 @@ void Golf::display() {
 
 
 void Golf::rotateMill() {
-   float ang = 0;
-   
   //first top triangle
   XPoint pt = {(short)millcentX, (short)millcentY};
   XPoint mypoints1[] = { {(short)millcentX, (short)millcentY}, {(short)triX1, (short)triY1}, {(short)triX2, (short)triY2} };
   int size1 = sizeof(mypoints1)/sizeof(pt);
   gfx_color(192, 242, 247);
   gfx_fill_polygon(mypoints1, size1);
+  angmill+=M_PI/10;
 }
 
 /*
