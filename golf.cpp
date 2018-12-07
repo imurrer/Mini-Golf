@@ -67,9 +67,8 @@ void Golf::displayarrow() {
 }
 
 void Golf::changearrow(char c){  
-   while (true) {	
-      display();
-      rotateMill();
+      //display();
+      //rotateMill();
       if (c == 'R') { //up
          if (arrowy > 600) {
  	        arrowy = arrowy -5;
@@ -96,11 +95,9 @@ void Golf::changearrow(char c){
        }
       gfx_line(ballx, bally, arrowx, arrowy);
       gfx_flush();
-      usleep(70000);
-      gfx_clear();
-      c= gfx_wait();
-      }
-}
+     // usleep(70000);
+     // gfx_clear();
+ }
 /*
 bool Golf::throughMill() {
   
