@@ -68,22 +68,24 @@ void Golf::displayarrow() {
 
 void Golf::changearrow(char c){  
    while (true) {	
+      display();
+      rotateMill();
       if (c == 'R') { //up
          if (arrowy > 600) {
  	        arrowy = arrowy -5;
          }
       }
-      if (c == 'S') { //down
+      if (c == 'Q') { //down
           if (arrowy < 735) {
             arrowy = arrowy +5;
           }
        }
-      if (c == 'T') {  //left
+      if (c == 'S') {  //left
           if (arrowx > 200) {
             arrowx = arrowx -5;
           }
       }
-      if (c == 'Q') { //right
+      if (c == 'T') { //right
          if (arrowx < 400) {
             arrowx = arrowx +5;
          }
@@ -93,6 +95,9 @@ void Golf::changearrow(char c){
           break;
        }
       gfx_line(ballx, bally, arrowx, arrowy);
+      gfx_flush();
+      usleep(70000);
+      gfx_clear();
       c= gfx_wait();
       }
 }
