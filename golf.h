@@ -12,5 +12,5 @@ class Golf {
     float angWM;
     float bx, by, ty, tx, l, w;
     float mx, my, ml, mw;
-    float 
+    float hx, hy, hw, hl, a1, a2;
 }
