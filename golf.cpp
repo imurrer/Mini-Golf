@@ -45,7 +45,9 @@ void Golf::display() {
 
 
 void Golf::rotateMill() {
-   //first top triangle
+   float ang = 0;
+   
+  //first top triangle
   XPoint pt = {(short)millcentX, (short)millcentY};
   XPoint mypoints1[] = { {(short)millcentX, (short)millcentY}, {(short)triX1, (short)triY1}, {(short)triX2, (short)triY2} };
   int size1 = sizeof(mypoints1)/sizeof(pt);
