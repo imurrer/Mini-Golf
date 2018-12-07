@@ -32,7 +32,7 @@ int main() {
     XPoint mypoints1[] = { {200, 550}, {250, 350}, {250, 550}, {200, 550} };
     XPoint mypoints2[] = { {350, 550}, {350, 350}, {400, 550} };
     int size1 = sizeof(mypoints1)/2;
-    gfx_fill_polygon(mypoints1, size1);
+    gfx_polygon(mypoints1, size1);
     
     gfx_color(0, 0, 0); // hole arc & hole
     gfx_fill_arc(hx, hy, hw, hl, a1, a2);
