@@ -15,10 +15,9 @@ class Golf {
     void rotateMill(); 
     void displayarrow();
     void changearrow(char);
-    /*
     void releaseball();
     void throughMill();
-    void ballAngle();
+    /*void ballAngle();
     void ballSpeed();*/
   private:
     float angWM;
