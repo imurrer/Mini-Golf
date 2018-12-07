@@ -4,13 +4,13 @@
 #include "golf.h"
 
 Golf::Golf() {
-   float ballx = 300, bally = 740, ballrad = 7.5;
-   float bx = 100, by = 550;
-   float mx = 200, my = 250;
-   float tx = 100, ty = 50;
-   float l = 400, w = 200;
-   float ml = 300, mw = 200;
-   float hx= 287.5 , hy= 537.5 , hl = 25, hw = 20, a1 =0, a2 =180;
+   ballx = 300, bally = 740, ballrad = 7.5;
+   bx = 100, by = 550;
+   mx = 200, my = 250;
+   tx = 100, ty = 50;
+   l = 400, w = 200;
+   ml = 300, mw = 200;
+   hx= 287.5 , hy= 537.5 , hl = 25, hw = 20, a1 =0, a2 =180;
 }
 
 Golf::~Golf() { }
