@@ -14,7 +14,7 @@ int main() {
     //switch(c) {
      //   case 
       
-    float ballx = 300, bally = 750, ballrad = 10;
+    float ballx = 300, bally = 740, ballrad = 7.5;
     float bx = 100, by = 550;
     float mx = 200, my = 250;
     float tx = 100, ty = 50;
