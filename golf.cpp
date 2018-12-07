@@ -110,17 +110,35 @@ void Golf::changearrow(char c){
      // usleep(70000);
      // gfx_clear();
  }
-/*
+
+void Golf::releaseball() {
+   while (true) {
+      ballx = ballx+ (radline * 0.85);
+      bally = bally + (radline * 0.85);
+   if ((ballx <=0) || (bally <=0))
+      break;
+   if (ballx >= 500-ballrad) 
+      ballx = -ballx;
+   if (ballx <= 100+ballrad)
+      ballx = -ballx;
+   if (bally <= 550+rad)
+      bally = -bally;
+   if (bally >= 750 - ballrad)
+      bally=-bally;
+}
+   usleep(70000);
+   gfx_clear();
+}
+
 bool Golf::throughMill() {
-  
+  if ((ballx >298) && (ballx < 302)) {
+    if ((bally+rad > 537.5) && (bally-rad < 550)) {
+       return true;
+    }
+  }
+  else 
+    return false;
 }
 
-float Golf::ballAngle() {
-
-}
-
-float Golf::ballSpeed() {
-
-}*/
 
 
