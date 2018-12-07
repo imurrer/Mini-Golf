@@ -23,6 +23,9 @@ int main() {
        if (c == 'q') {
          break;
        }
+       gfx_flush();
+       usleep(4000);
+       gfx_clear();
      }
   }
 }
