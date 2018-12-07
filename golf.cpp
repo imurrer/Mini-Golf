@@ -12,9 +12,12 @@ Golf::Golf() {
    ml = 300, mw = 200;
    hx= 287.5 , hy= 537.5 , hl = 25, hw = 20, a1 =0, a2 =180;
    millcentX = 300, millcentY = 400, triX1 = 270, triY1 = 250, triX2 = 330, triY2 = 250;
+   triX3 = triX2, triY3 = triY2+2*(millcentY-triY2), triX4 = triX1, triY4 = triY1+2*(millcentY-triY1);
    radmill = pow(pow(millcentX-triX2, 2)+pow(millcentY-triY2, 2), .5);
    angmill1 = acos((triX2-millcentX)/radmill);
    angmill2 = angmill1+2*atan((triX2-triX1)*.5/radmill);
+   angmill3 = M_PI+angmill1;
+   angmill4 = M_PI+angmill2;
    arrowx = 300, arrowy =675;
    radline =pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5), angline = M_PI/2;
 }
@@ -53,15 +56,23 @@ void Golf::rotateMill() {
   //first top triangle
   XPoint pt = {(short)millcentX, (short)millcentY};
   XPoint mypoints1[] = { {(short)millcentX, (short)millcentY}, {(short)triX1, (short)triY1}, {(short)triX2, (short)triY2} };
+  XPoint mypoints2[] = { {(short)millcentX, (short)millcentY}, {(short)triX3, (short)triY3}, {(short)triX4, (short)triY4} };
   int size1 = sizeof(mypoints1)/sizeof(pt);
   gfx_color(192, 242, 247);
   gfx_fill_polygon(mypoints1, size1);
+  gfx_fill_polygon(mypoints2, size1);
   angmill1+=M_PI/6;
   angmill2+=M_PI/6;
   triX1 = triX1+(radmill*(cos(angmill1-M_PI/6)-cos(angmill1)));
   triY1 = triY1+(radmill*(sin(angmill1-M_PI/6)-sin(angmill1)));
   triX2 = triX2+(radmill*(cos(angmill2-M_PI/6)-cos(angmill2)));
   triY2 = triY2+(radmill*(sin(angmill2-M_PI/6)-sin(angmill2)));
+  angmill3+=M_PI/6;
+  angmill4+=M_PI/6;
+  triX3 = triX3+(radmill*(cos(angmill3-M_PI/6)-cos(angmill3)));
+  triY3 = triY3+(radmill*(sin(angmill3-M_PI/6)-sin(angmill3)));
+  triX4 = triX4+(radmill*(cos(angmill4-M_PI/6)-cos(angmill4)));
+  triY4 = triY4+(radmill*(sin(angmill4-M_PI/6)-sin(angmill4)));
 }
 
 void Golf::displayarrow() {
