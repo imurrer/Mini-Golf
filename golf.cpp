@@ -14,7 +14,7 @@ Golf::Golf() {
    millcentX = 300, millcentY = 400, triX1 = 270, triY1 = 250, triX2 = 330, triY2 = 250;
    radmill = pow(pow(millcentX-triX2, 2)+pow(millcentY-triY2, 2), .5);
    angmill1 = acos((triX2-millcentX)/radmill);
-	 angmill2 = angmill1+2*atan((triX2-triX1)*.5/radmill);
+   angmill2 = angmill1+2*atan((triX2-triX1)*.5/radmill);
    arrowx = 300, arrowy =675;
    radline =pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5), angline = M_PI/2;
 }
@@ -57,12 +57,11 @@ void Golf::rotateMill() {
   gfx_color(192, 242, 247);
   gfx_fill_polygon(mypoints1, size1);
   angmill1+=M_PI/6;
-	angmill2+=M_PI/6;
+  angmill2+=M_PI/6;
   triX1 = triX1+(radmill*(cos(angmill1-M_PI/6)-cos(angmill1)));
   triY1 = triY1+(radmill*(sin(angmill1-M_PI/6)-sin(angmill1)));
   triX2 = triX2+(radmill*(cos(angmill2-M_PI/6)-cos(angmill2)));
   triY2 = triY2+(radmill*(sin(angmill2-M_PI/6)-sin(angmill2)));
-	cout << radmill << " " << angmill1 <<" " << angmill2<< " " << triX1 << " " << triY1 << " " << triX2 << " " << triY2 << endl;
 }
 
 void Golf::displayarrow() {
