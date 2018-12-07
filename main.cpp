@@ -11,7 +11,6 @@ int main() {
   gfx_open(600, 800, "Putt Putt");
   
   while (loop) {
-    gfx_clear();
     //switch(c) {
      //   case 
       
