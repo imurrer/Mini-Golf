@@ -75,7 +75,7 @@ void Golf::changearrow(char c){
            if (angline != (M_PI/2)) 
            arrowx = arrowx+5*(cos(angline));
            else 
-           arrowy = arrow y-5;  
+           arrowy = arrowy-5;  
          }
       }
       if (c == 'Q') { //left
