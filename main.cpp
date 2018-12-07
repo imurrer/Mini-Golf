@@ -52,7 +52,7 @@ int main() {
      //  c = gfx_wait();
       // if (c == 'q') {
       // break;
-       }
+       //}
      }
  // }
 }
