@@ -16,9 +16,9 @@ int main() {
      if (gfx_event_waiting()) {
        c = gfx_wait();
         h1.displayarrow();
-        //if ((c=='R') || (c=='S') || (c=='T') || (c=='Q')) {
-        //  h1.changearrow(c);
-        //}
+        if ((c=='R') || (c=='S') || (c=='T') || (c=='Q')) {
+           h1.changearrow(c);
+        }
       // if (c== '32') { //space bar to release ball
        //  h1.releaseball();
       // }
