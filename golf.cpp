@@ -28,7 +28,6 @@ void Golf::display() {
        
     gfx_color(170, 184, 255);  //the windmill herself
     gfx_fill_rectangle(250, 400, 100, 150);
-    //her lucious triangles
     XPoint pt = {200, 550};
     XPoint mypoints1[] = { {200, 550}, {250, 400}, {250, 550} };
     XPoint mypoints2[] = { {350, 550}, {350, 400}, {400, 550} };
@@ -47,7 +46,7 @@ void Golf::display() {
 
 void Golf::rotateMill() {
   XPoint pt = {millcentX, millcentY};
-  XPoint mypoints1[] = { {millcentX, millcentY}, {triX1, triY1}, {triX2, triY2} };
+  XPoint mypoints1[] = { {(short)millcentX, (short)millcentY}, {(short)triX1, (short)triY1}, {(short)triX2, (short)triY2} };
   int size1 = sizeof(mypoints1)/sizeof(pt);
   gfx_fill_polygon(mypoints1, size1);
 }
