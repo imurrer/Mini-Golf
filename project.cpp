@@ -4,11 +4,10 @@
 #include "golf.h"
 
 int main() {
+  Golf h1;
   bool loop = true;
   char c;
   gfx_open(600, 800, "Putt Putt");
-  
-  Golf h1;
   
   while (loop) {
      if (gfx_event_waiting()) {
