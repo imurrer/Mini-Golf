@@ -27,11 +27,11 @@ int main() {
     gfx_fill_rectangle(bx, by, l, w);
     
     gfx_color(170, 184, 255);  //the windmill herself
-    gfx_fill_rectangle(250, 350, 100, 200);
+    gfx_fill_rectangle(250, 400, 100, 150);
     //her lucious triangles
     XPoint pt = {200, 550};
-    XPoint mypoints1[] = { {200, 550}, {250, 350}, {250, 550} };
-    XPoint mypoints2[] = { {350, 550}, {350, 350}, {400, 550} };
+    XPoint mypoints1[] = { {200, 550}, {250, 400}, {250, 550} };
+    XPoint mypoints2[] = { {350, 550}, {350, 400}, {400, 550} };
     int size1 = sizeof(mypoints1)/sizeof(pt);
     gfx_fill_polygon(mypoints1, size1);
     gfx_fill_polygon(mypoints2, size1);
