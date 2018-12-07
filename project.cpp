@@ -14,9 +14,10 @@ int main() {
        c = gfx_wait();
         h1.display();
         h1.rotateMill();
-      // if ((c=='R') || (c=='S') || (c=='T') || (c=='Q')) {
-      //   h1.displayarrow(c);
-      // }
+        h1.displayarrow();
+        if ((c=='R') || (c=='S') || (c=='T') || (c=='Q')) {
+          h1.changearrow(c);
+        }
       // if (c== '32') { //space bar to release ball
        //  h1.releaseball();
       // }
