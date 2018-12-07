@@ -121,7 +121,7 @@ void Golf::releaseball() {
       ballx = -ballx;
    if (ballx <= 100+ballrad)
       ballx = -ballx;
-   if (bally <= 550+rad)
+   if (bally <= 550+ballrad)
       bally = -bally;
    if (bally >= 750 - ballrad)
       bally=-bally;
@@ -132,7 +132,7 @@ void Golf::releaseball() {
 
 bool Golf::throughMill() {
   if ((ballx >298) && (ballx < 302)) {
-    if ((bally+rad > 537.5) && (bally-rad < 550)) {
+    if ((bally+ballrad > 537.5) && (bally-ballrad < 550)) {
        return true;
     }
   }
