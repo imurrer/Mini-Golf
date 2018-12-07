@@ -1,5 +1,8 @@
 //golf.h
 
+#include <iostream>
+#include "gfx3.h"
+
 class Golf {
   public:
     Golf();
