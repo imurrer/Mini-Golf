@@ -83,37 +83,21 @@ void Golf::displayarrow() {
 void Golf::changearrow(char c){  
       //display();
       //rotateMill();
-      if (c == 'R') { //up
-         if (arrowy > 600) {
-           if (angline != (M_PI/2)) 
-           arrowx = arrowx+5*(cos(angline));
-           else 
-           arrowy = arrowy-5;  
-         }
-      }
-      if (c == 'Q') { //left
-          if (arrowx > 200) {
-            angline = angline + (M_PI/16);
-            arrowx = arrowx+(radline)*cos(angline);
-            arrowy = arrowy+(radline)*sin(angline - (M_PI/16))- radline*sin(angline);
+         arrowx = gfx_xpos();
+         arrowy = gfx_ypos();
+         if (arrowy > 475) {
+           arrowx = 475;
           }
-       }
-      if (c == 'S') {  //right
-          if (arrowx < 400) {
-             angline = angline - (M_PI/16);
-             arrowx = arrowx+(radline)*cos(angline);
-             arrowy = arrowy+(radline)*sin(angline+ (M_PI/16)) - radline*sin(angline);
+          if (arrowx < 325) {
+            arrowx = 325;
           }
-      }
-      if (c == 'T') { //down
-         if (arrowy < 735) {
-            if (angline != (M_PI/2))
-              arrowx = arrowx+5*(cos(angline));
-            else
-              arrowy = arrowy-5;
+          if (arrowy < 575) {
+             arrowy = 575;
+          }
+         if (arrowy > 625) {
+            arrowy = 625;
          }
-      }
-      if (c==32) { //release
+         if (c==32) { //release
           releaseball();
        }
       gfx_line(ballx, bally, arrowx, arrowy);
