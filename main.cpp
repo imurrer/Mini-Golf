@@ -19,7 +19,7 @@ int main() {
     float tx = 100, ty = 50;
     float l = 400, w = 200;
     float ml = 300, mw = 200;
-    float hx= 287.5 , hy= 540 , hl = 25, hw = 20, a1 =0, a2 =180;
+    float hx= 287.5 , hy= 535 , hl = 25, hw = 20, a1 =0, a2 =180;
     
     gfx_color(29, 147, 41); // green course
     gfx_fill_rectangle(tx, ty, l, w);
