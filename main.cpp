@@ -14,6 +14,7 @@ int main() {
     //switch(c) {
      //   case 
       
+    float ballx = 300, bally = 750, ballrad = 10;
     float bx = 100, by = 550;
     float mx = 200, my = 250;
     float tx = 100, ty = 50;
@@ -26,6 +27,10 @@ int main() {
     gfx_fill_rectangle(mx, my, mw, ml);
     gfx_fill_rectangle(bx, by, l, w);
     
+    //Ms. Ball
+    gfx_color(255, 255, 255);
+    gfx_fill_circle(ballx, bally, ballrad);
+       
     gfx_color(170, 184, 255);  //the windmill herself
     gfx_fill_rectangle(250, 400, 100, 150);
     //her lucious triangles
