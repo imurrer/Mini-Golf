@@ -1,4 +1,4 @@
-#Makefile for Snowman Game
+#Makefile for Golf Game
 
 CMP = g++ -std=c++11
 MAIN = project
