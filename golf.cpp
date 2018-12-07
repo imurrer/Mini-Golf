@@ -85,7 +85,7 @@ void Golf::changearrow(char c){
       }
       if (c==‘Q’) { //right
          if (arrowx < 400) {
-            arrowx = arrow +5;
+            arrowx = arrowx +5;
          }
       }
       if (c==32) { //release
