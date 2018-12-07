@@ -13,7 +13,7 @@ Golf::Golf() {
    hx= 287.5 , hy= 537.5 , hl = 25, hw = 20, a1 =0, a2 =180;
    millcentX = 300, millcentY = 400, triX1 = 270, triY1 = 250, triX2 = 330, triY2 = 250;
    radmill = pow(pow(millcentX-triX2, 2)+pow(millcentY-triY2, 2), .5);
-   angmill = asin((millcentX-triX2)/radmill);
+   angmill = acos((triX2-millcentX)/radmill);
    arrowx = 300, arrowy =675;
 }
 
