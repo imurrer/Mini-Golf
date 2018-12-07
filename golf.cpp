@@ -15,9 +15,7 @@ Golf::Golf() {
    float hx= 287.5 , hy= 537.5 , hl = 25, hw = 20, a1 =0, a2 =180;
 }
 
-Golf::~Golf() {
-}
-
+Golf::~Golf() { }
 
 void Golf::display() {
    gfx_color(29, 147, 41); // green course
@@ -47,6 +45,7 @@ void Golf::display() {
     gfx_line(200, 250, 400 , 250);
 }
 
+/*
 void Golf::rotateMill() {
   
 }
@@ -61,6 +60,6 @@ float Golf::ballAngle() {
 
 float Golf::ballSpeed() {
 
-}
+}*/
 
 
