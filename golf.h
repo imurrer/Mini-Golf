@@ -13,6 +13,8 @@ class Golf {
     ~Golf();
     void display();
     void rotateMill(); /*
+    void displayarrow(char);
+    void releaseball();
     void throughMill();
     void ballAngle();
     void ballSpeed();*/
