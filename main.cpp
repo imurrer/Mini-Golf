@@ -13,8 +13,8 @@ int main() {
   while (loop) {
     c= gfx_wait();
     gfx_clear();
-    switch(c) {
-        case '
+    //switch(c) {
+     //   case '
     
     float bx = 100, by = 550;
     float mx = 200, my = 250;
