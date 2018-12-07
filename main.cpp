@@ -10,7 +10,7 @@ int main() {
   char c;
   gfx_open(600, 800, "Putt Putt");
   
-  while (loop) {
+ // while (loop) {
     //switch(c) {
      //   case 
       
@@ -54,7 +54,7 @@ int main() {
        break;
        }
      }
-  }
+ // }
 }
     
     
