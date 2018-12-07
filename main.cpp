@@ -1,9 +1,7 @@
 //main.cpp
 // Bella Murrer and Hannah Sarkey
 
-#include "gfx3.h"
-#include <iostream>
-using namespace std;
+#include "golf.h"
 
 int main() {
   bool loop = true;
