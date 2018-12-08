@@ -116,6 +116,7 @@ bool Golf::releaseball() {
    dx = (radline*.2);
    dy = (radline*.4);
    while (dx > 0 && dy > 0) {
+      radline = pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5);
       bool inMill = throughMill();
       bool win = inhole();
       if(inMill) {
@@ -164,9 +165,11 @@ bool Golf::releaseball() {
          minus +=3;
          cout << "5" << minus << endl;
       }*/
-      
+      cout << "ball points:" << endl;
+      cout << ballx << " " << bally << endl;
       ballx = dx + ballx;
       bally = dy + bally;
+      cout << ballx << " " << bally << endl;
      
    //if ((ballx <=0) || (bally <=0))
      // break;
