@@ -165,7 +165,7 @@ bool Golf::releaseball() {
       }
       
       ballx = dx + ballx;
-      bally = dy + bally;
+      bally = dy - bally;
      
    //if ((ballx <=0) || (bally <=0))
      // break;
