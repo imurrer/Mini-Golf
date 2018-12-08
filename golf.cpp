@@ -81,9 +81,9 @@ void Golf::displayarrow() {
       gfx_line(ballx, bally, arrowx, arrowy);
    }
    if ((bally <=250) && (bally >=50)) {
-      arrowy= 150;
-      arrowx = 300;
-      gfx_line(ballx, bally, arrowx, arrowy);
+      //arrowy= 150;
+      //arrowx = 300;
+      gfx_line(ballx, bally, 300, 150);
    }
 }
 
