@@ -129,14 +129,14 @@ bool Golf::releaseball() {
    float x = arrowx-ballx, y = arrowy-bally, ratio;
       if(x==0){
          dx = 0;
-         if(dy<0)
+         if(y<0)
             dy = -1*radline*.2;
          else
             dy = radline*.2;
       }
       else if(y==0){
          dy = 0;
-         if(dx<0)
+         if(x<0)
             dx = -1*radline*.2;
          else
             dx = radline*.2;
@@ -144,11 +144,11 @@ bool Golf::releaseball() {
       else{
          if(abs(x)>abs(y)){
             ratio = y/x;
-            if(dx<0 || x<0)
+            if(x<0)
                dx = -1*(radline*.2);
             else
                dx = (radline*.2);
-            if(dy<0 || y<0)
+            if(y<0)
                dy = -1*ratio*dx;  
             else
                dy = ratio*dx;
