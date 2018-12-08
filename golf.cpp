@@ -112,11 +112,10 @@ void Golf::changearrow(char c){
 
 bool Golf::releaseball() {
    bool endGame = false;
-   float minus=0, dx, dy;
-   elseif(radline <= 357 && 
+   float minus=0, dx = 1, dy = 1;
    //dx = (radline*.2);
    //dy = (radline*.4);
-   while (true) {
+   while (dx > 0 && dy > 0) {
       bool inMill = throughMill();
       bool win = inhole();
       if(inMill) {
@@ -141,22 +140,22 @@ bool Golf::releaseball() {
          dy = 20-minus;
          minus +=1;
       }
-      if(radline <= 357 && radline > 267){
+      else if(radline <= 357 && radline > 267){
          dx = 20-minus; //do angle stuff with direction of ball
          dy = 20-minus;
          minus +=2;
       }
-      if(radline <= 267 && radline > 177){
+      else if(radline <= 267 && radline > 177){
          dx = 20-minus; //do angle stuff with direction of ball
          dy = 20-minus;
          minus +=3;
       }
-      if(radline <= 177 && radline > 97){
+      else if(radline <= 177 && radline > 97){
          dx = 20-minus; //do angle stuff with direction of ball
          dy = 20-minus;
          minus +=4;
       }
-      if(radline <= 97){
+      else if(radline <= 97){
          dx = 20-minus; //do angle stuff with direction of ball
          dy = 20-minus;
          minus +=5;
