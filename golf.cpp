@@ -112,7 +112,7 @@ void Golf::changearrow(char c){
 
 void Golf::releaseball() {
    while (true) {
-      cout << "yodel" << endl;
+      cout << "yodel" << ballx << " " << bally << endl;
       ballx = ballx+ (radline * 0.85);
       bally = bally + (radline * 0.85);
    if ((ballx <=0) || (bally <=0))
