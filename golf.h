@@ -1,4 +1,5 @@
 //golf.h
+//Bella Murrer and Hannah Sarkey
 
 #include <iostream>
 #include "gfx3.h"
@@ -18,8 +19,6 @@ class Golf {
     bool releaseball();
     bool throughMill();
     bool inhole();
-    /*void ballAngle();
-    void ballSpeed();*/
   private:
     float angWM;
     float bx, by, ty, tx, l, w;
