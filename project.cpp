@@ -28,29 +28,18 @@ int main() {
       }
     }  
    }
-  cout << endl;
-  cout << "second WHILE "<< endl;
   while (loop) {
-     float release = 0;
      h1.display();
      h1.rotateMill();
      h1.displayarrow();
-    cout << c << endl;
-    cout << endl;
-     c=0;
      if (gfx_event_waiting()) {
        c = gfx_wait();
-        h1.displayarrow();
-        if (c== 1) {
-           h1.changearrow(c);
-          cout << "hey" << endl;
+       h1.displayarrow();
+       if (c== 1) {
+          h1.changearrow(c);
           c = gfx_wait();
         }
        if (c== 32) { //space bar to release ball
-         c=0;
-         release++;
-         cout << endl;
-         cout << release << endl;
          win = h1.releaseball();
          if(win)
            goto END;
