@@ -123,8 +123,14 @@ bool Golf::releaseball() {
       else if(y==0)
          dy = 0;
       else{
-         dx = (radline*.4);
-         dy = ratio*dx;  
+         if(dx<0)
+            dx = -1*(radline*.4);
+         else
+            dx = (radline*.4);
+         if(dy<0)
+            dy = -1*ratio*dx;  
+         else
+            dy = ratio*dx;
       }
       cout << "ratio" << ratio <<" "<< dx << " " <<dy << endl;
       bool inMill = throughMill();
