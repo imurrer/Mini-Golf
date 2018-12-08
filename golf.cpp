@@ -86,17 +86,22 @@ void Golf::changearrow(char c){
          arrowx = gfx_xpos();
          arrowy = gfx_ypos();
          cout << arrowx << arrowy << endl;
-         if (arrowx > 475) {
-           arrowx = 475;
+         if (arrowx > 500) {
+           arrowx = 500;
           }
-          if (arrowx < 125) {
-            arrowx = 125;
+          if (arrowx < 100) {
+            arrowx = 100;
           }
-          if (arrowy < 575) {
-             arrowy = 575;
-          }
-         if (arrowy > 725) {
-            arrowy = 725;
+          if ((bally > 550)&& (bally <750)) {
+             if (arrowy < 550)
+                arrowy = 550;
+             if (arrowy > 750)
+                arrowy = 750;
+         if ((bally > 50) && (bally <250)) {
+            if (arrowy <50) 
+               arrowy = 50;
+            if (arrowy >250)
+               arrowy = 250;
          }
          if (c==32) { //release
           releaseball();
