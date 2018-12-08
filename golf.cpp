@@ -166,7 +166,7 @@ bool Golf::releaseball() {
          cout << "5" << minus << endl;
       }*/
       cout << "ball points:" << endl;
-      cout << ballx << " " << bally << endl;
+      cout << ballx << " " << bally << " dy " << dy << endl;
       ballx = dx + ballx;
       bally = dy + bally;
       cout << ballx << " " << bally << endl;
