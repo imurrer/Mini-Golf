@@ -176,8 +176,14 @@ bool Golf::releaseball() {
            dx = dx-minusX;
          if(dy!=0)
            dy = dy-minusY;
-         minusX +=1;
-         minusY +=1;
+         if(minusX>1)
+            minusX +=1;
+         else if(minusX<1)
+            minusX -=1;
+         if(minusY>1)
+            minusY +=1;
+         else if(minusY<1)
+            minusY -=1;
       }
       else if(radline <= 357 && radline > 267){
          if(dx!=0)
