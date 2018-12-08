@@ -123,8 +123,13 @@ bool Golf::releaseball() {
          else
             dy = radline*.4;
       }
-      else if(y==0)
+      else if(y==0){
          dy = 0;
+         if(dx<0)
+            dx = -1*radline*.4;
+         else
+            dx = radline*.4;
+      }
       else{
          if(dx<0)
             dx = -1*(radline*.4);
