@@ -30,6 +30,7 @@ int main() {
    }
   
   while (loop) {
+     RESTART: { }
      h1.display();
      h1.rotateMill();
      h1.displayarrow();
@@ -43,6 +44,9 @@ int main() {
          win = h1.releaseball();
          if(win)
            goto END;
+         else
+           gfx_clear();
+           goto RESTART;
        }
        if (c == 'q') {
          break;
