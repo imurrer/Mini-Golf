@@ -116,7 +116,7 @@ void Golf::releaseball() {
    cout << radline << endl;
    while (true) {
       bool inMill = throughMill();
-      bool win = inHole();
+      bool win = inhole();
       display();
       rotateMill();
       if(inMill) {
