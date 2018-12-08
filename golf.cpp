@@ -1,4 +1,4 @@
-//golf.cpp
+c//golf.cpp
 //Bella Murrer and Hannah Sarkey
 
 #include "golf.h"
