@@ -30,6 +30,7 @@ int main() {
    }
   
   while (loop) {
+      float release = 0;
      RESTART: { }
      h1.display();
      h1.rotateMill();
@@ -41,6 +42,9 @@ int main() {
            h1.changearrow(c);
         }
        if (c== 32) { //space bar to release ball
+         release++;
+         cout << endl;
+         cout << release << endl;
          win = h1.releaseball();
          if(win)
            goto END;
