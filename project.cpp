@@ -58,7 +58,6 @@ int main() {
     gfx_clear();
     while (windisplay) {
       gfx_color(170, 184, 255);
-     // gfx_changefont(1 );
       gfx_text(275, 400, "WINNER!");
       gfx_text(250, 700, "Hit 'a' to play again.");
       gfx_text(250, 725, "Hit 'q' to quit.");
