@@ -121,9 +121,7 @@ void Golf::releaseball() {
       if(inMill) {
          cout << "winner??" << endl;
          ballx = 300;
-         bally = 250-2*ballrad;
-         dx = -dx;
-         dy = -dy;
+         bally = 250-ballrad;
       }
       if(win){
          cout << "WINNN" << endl;
