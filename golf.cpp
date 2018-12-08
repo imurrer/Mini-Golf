@@ -174,64 +174,64 @@ bool Golf::releaseball() {
       if(radline > 357){
         if(dx!=0){
            dx = dx-minusX; //do angle stuff with direction of ball
-           if(minusX>0)
+           if(dx>0)
               minusX+=1;
-           else if(minusX<0)
+           else if(dx<0)
               minusX-=1;
          }
          if(dy!=0){
            dy = dy-minusY;
-           if(minusY>0)
+           if(dy>0)
               minusY+=1;
-           else if(minusY<0)
+           else if(dy<0)
               minusY-=1;
          }
       }
       else if(radline <= 357 && radline > 267){
          if(dx!=0){
            dx = dx-minusX; //do angle stuff with direction of ball
-           if(minusX>0)
+           if(dx>0)
               minusX+=1.5;
-           else if(minusX<0)
+           else if(dx<0)
               minusX-=1.5;
          }
          if(dy!=0){
            dy = dy-minusY;
-           if(minusY>0)
+           if(dy>0)
               minusY+=1.5;
-           else if(minusY<0)
+           else if(dy<0)
               minusY-=1.5;
          }
       }
       else if(radline <= 267 && radline > 177){
          if(dx!=0){
            dx = dx-minusX; //do angle stuff with direction of ball
-           if(minusX>0)
+           if(dx>0)
               minusX+=2;
-           else if(minusX<0)
+           else if(dx<0)
               minusX-=2;
          }
          if(dy!=0){
            dy = dy-minusY;
-           if(minusY>0)
+           if(dy>0)
               minusY+=2;
-           else if(minusY<0)
+           else if(dy<0)
               minusY-=2;
          }
       }
       else if(radline <= 177 && radline > 97){
          if(dx!=0){
            dx = dx-minusX; //do angle stuff with direction of ball
-           if(minusX>0)
+           if(dx>0)
               minusX+=2.5;
-           else if(minusX<0)
+           else if(dx<0)
               minusX-=2.5;
          }
          if(dy!=0){
            dy = dy-minusY;
-           if(minusY>0)
+           if(dy>0)
               minusY+=2.5;
-           else if(minusY<0)
+           else if(dy<0)
               minusY-=2.5;
          }
       }
