@@ -115,6 +115,7 @@ void Golf::changearrow(char c){
 
 void Golf::releaseball() {
    while (true) {
+      cout << "yodel" << endl;
       ballx = ballx+ (radline * 0.85);
       bally = bally + (radline * 0.85);
    if ((ballx <=0) || (bally <=0))
@@ -128,8 +129,8 @@ void Golf::releaseball() {
    if (bally >= 750 - ballrad)
       bally=-bally;
 }
-   usleep(70000);
-   gfx_clear();
+   //usleep(70000);
+   //gfx_clear();
 }
 
 bool Golf::throughMill() {
