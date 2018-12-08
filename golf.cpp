@@ -127,6 +127,7 @@ void Golf::releaseball() {
          dy = -dy;
       }
       if(win){
+         cout << "WINNN" << endl;
          goto END;
       }
       cout << "yodel" << ballx << " " << bally << endl;
