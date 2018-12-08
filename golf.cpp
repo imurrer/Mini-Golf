@@ -97,7 +97,6 @@ void Golf::changearrow(char c){
       //rotateMill();
          arrowx = gfx_xpos();
          arrowy = gfx_ypos();
-         cout << arrowx << arrowy << endl;
          if (arrowx > 500) {
            arrowx = 500;
           }
@@ -125,13 +124,9 @@ void Golf::changearrow(char c){
 bool Golf::releaseball() {
    bool endGame = false;
    float minusX=0, minusY=0, dx = 1, dy = 1;
-   cout << "AT BEGIN " << endl;
-   cout << "ABS values" << abs(dx) <<" " <<abs(dy) << endl;
    radline = pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5);
-   while (abs(minusX)<abs(dx) || abs(minusY)<abs(dy)) {    //can't be while dx>0 and dy >0; what if dx or dy is negative or 0
-      float x = arrowx-ballx, y = arrowy-bally, ratio;
-      cout << "THIS IS Y " << y << endl;
-      cout << "initial dy dx" << dx << " " << dy << endl;
+   
+   float x = arrowx-ballx, y = arrowy-bally, ratio;
       if(x==0){
          dx = 0;
          if(dy<0)
@@ -147,38 +142,48 @@ bool Golf::releaseball() {
             dx = radline*.4;
       }
       else{
-         ratio = y/x;
-         if(dx<0 || x<0)
-            dx = -1*(radline*.4);
-         else
-            dx = (radline*.4);
-         if(dy<0 || y<0)
-            dy = -1*ratio*dx;  
-         else
-            dy = ratio*dx;
+         if(x>y){
+            ratio = y/x;
+            if(dx<0 || x<0)
+               dx = -1*(radline*.4);
+            else
+               dx = (radline*.4);
+            if(dy<0 || y<0)
+               dy = -1*ratio*dx;  
+            else
+               dy = ratio*dx;
+         }
+         else if(y>x){
+            ratio = y/x;
+            if(dy<0 || y<0)
+               dy = -1*(radline*.4); 
+            else
+               dy = 1*(radline*.4);
+            if(dx<0 || x<0)
+               dx = -1*ratio*dy; 
+            else
+               dx = ratio*dy;
+         }
       }
-      cout << "ratio" << ratio <<" "<< dx << " " <<dy << endl;
+   
+   while (abs(minusX)<abs(dx) || abs(minusY)<abs(dy)) {    //can't be while dx>0 and dy >0; what if dx or dy is negative or 0
+      
       bool inMill = throughMill();
       bool win = inhole();
       if(inMill) {
          display();
-         cout << "winner??" << endl;
          ballx = 300;
          bally = 250-ballrad-1;
          inMill = false;
       }
       if(win){
          display();
-         cout << "WINNN" << endl;
          endGame = true;
          goto END;
       }
-      cout << "yodel" << ballx << " " << bally << endl;
       display();
       rotateMill();
-      cout << radline << "radline" <<endl;
       
-      cout << "HERE IS MINUS " << minusX << " "<<minusY << endl;
       if(radline > 357){
         if(dx!=0){
            dx = dx-minusX; //do angle stuff with direction of ball
@@ -258,17 +263,11 @@ bool Golf::releaseball() {
            else if(dy<0)
               minusY-=3;
          }
-         cout << "5" <<"  "<< minusX << " "<< minusY << endl;
       }
       
-      cout << "ball points:" << endl;
-      cout << ballx << " " << bally << " dy " << dy << endl;
       ballx = dx + ballx;
       bally = dy + bally;
-      cout << ballx << " " << bally << endl;
-     
-   //if ((ballx <=0) || (bally <=0))
-     // break;
+
    if (ballx >= 500-ballrad){
       dx = -dx;
       minusX = -minusX;
@@ -287,11 +286,9 @@ bool Golf::releaseball() {
    else if(bally <= 550+ballrad && bally > 300){ 
       dy = -dy;
       minusY = -minusY;
-      cout << "hey" << endl;
       bally = 550+ballrad+3;
    }
    else if(bally >= 750-ballrad){
-      cout << "over the edge" << endl;
       dy = -dy;
       minusY = -minusY;
       bally = 750-ballrad-3;
@@ -301,7 +298,6 @@ bool Golf::releaseball() {
       bally = 50+ballrad+3;
       dy = -dy;
    }
-   cout << radline << "dx dy  " << dx << " " << dy << endl;
    gfx_flush();
    usleep(75000);
    gfx_clear();

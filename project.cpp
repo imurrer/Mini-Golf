@@ -13,9 +13,9 @@ int main() {
   
   gfx_open(600, 800, "Putt Putt");
   
-  BEGIN: { } 
-  
-  h1.resetplacements(); 
+  BEGIN: { }
+  gfx_clear();
+  h1.resetplacements();
   
   while (directions) { // message screen for directions
     gfx_color(170, 184, 255);
