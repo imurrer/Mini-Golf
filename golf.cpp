@@ -115,7 +115,7 @@ bool Golf::releaseball() {
    float minus=0, dx = 1, dy = 1;
    dx = (radline*.2);
    dy = (radline*.4);
-   while (true) {    //can't be while dx>0 and dy >0
+   while (minus<dx && minus<dx) {    //can't be while dx>0 and dy >0
       radline = pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5);
       bool inMill = throughMill();
       bool win = inhole();
