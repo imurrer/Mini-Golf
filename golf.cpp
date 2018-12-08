@@ -133,9 +133,11 @@ void Golf::releaseball() {
 }
 
 bool Golf::throughMill() {
-  if ((ballx >298) && (ballx < 302)) {
-    if ((bally+ballrad > 537.5) && (bally-ballrad < 550)) {
-       return true;
+  if(triY1!=550 && triY4!=550) {
+    if ((ballx > 287.5) && (ballx < 312.5)) {
+      if (bally+ballrad > 537.5) {
+        return true;
+      }
     }
   }
   else 
