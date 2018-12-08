@@ -116,6 +116,7 @@ void Golf::releaseball() {
    cout << radline << endl;
    while (true) {
       bool inMill = throughMill();
+      bool win = inHole();
       display();
       rotateMill();
       if(inMill) {
@@ -124,6 +125,9 @@ void Golf::releaseball() {
          bally = 250-ballrad;
          dx = -dx;
          dy = -dy;
+      }
+      if(win){
+         goto END;
       }
       cout << "yodel" << ballx << " " << bally << endl;
       ballx = dx + ballx;
@@ -140,6 +144,7 @@ void Golf::releaseball() {
    usleep(35000);
    gfx_clear();
   }
+  END: {}
 }
 
 bool Golf::throughMill() {
