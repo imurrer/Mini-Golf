@@ -132,6 +132,7 @@ bool Golf::releaseball() {
          goto END;
       }
       cout << "yodel" << ballx << " " << bally << endl;
+      cout << minus << endl;
       display();
       rotateMill();
       if(radline <= 447.3 && radline > 357){
