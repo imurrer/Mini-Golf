@@ -116,16 +116,17 @@ void Golf::releaseball() {
    while (true) {
       bool inMill = throughMill();
       bool win = inhole();
-      display();
-      rotateMill();
-      ballx = dx + ballx;
-      bally = dy + bally;
       if(inMill) {
          cout << "winner??" << endl;
          ballx = 300;
          bally = 250-ballrad-1;
          inMill = false;
       }
+      display();
+      rotateMill();
+      ballx = dx + ballx;
+      bally = dy + bally;
+      
       if(win){
          cout << "WINNN" << endl;
          goto END;
