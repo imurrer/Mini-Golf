@@ -147,6 +147,7 @@ void Golf::releaseball() {
    }
    else if(bally <= 550+ballrad && bally > 300){ 
       dy = -dy;
+      cout << "hey" << endl;
       bally = 550+ballrad+1;
    }
    else if(bally >= 750-ballrad){
