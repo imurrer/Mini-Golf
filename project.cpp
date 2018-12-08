@@ -19,7 +19,7 @@ int main() {
         if (c== 1) {
            h1.changearrow(c);
         }
-       if (c== '32') { //space bar to release ball
+       if (c== 32) { //space bar to release ball
          h1.releaseball();
        }
        if (c == 'q') {
