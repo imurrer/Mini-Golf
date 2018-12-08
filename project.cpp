@@ -8,6 +8,7 @@ int main() {
   bool loop = true;
   bool win  = false;
   bool directions = true;
+  bool windisplay = true;
   char c, d, f;
   
   BEGIN: { }
