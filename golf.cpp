@@ -130,7 +130,7 @@ bool Golf::releaseball() {
    radline = pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5);
    while (abs(minusX)<abs(dx) || abs(minusY)<abs(dy)) {    //can't be while dx>0 and dy >0; what if dx or dy is negative or 0
       float x = arrowx-ballx, y = arrowy-bally, ratio;
-      cout << "THIS IS Y " << y << endl;
+      cout << "THIS IS Y " << y << "THIS IS X" << x<<endl;
       cout << "initial dy dx" << dx << " " << dy << endl;
       if(x==0){
          dx = 0;
