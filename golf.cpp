@@ -191,6 +191,7 @@ bool Golf::releaseball() {
       bally = 550+ballrad+3;
    }
    else if(bally >= 750-ballrad){
+      cout << "over the edge" << endl;
       bally = 750-ballrad-3;
       dy = -dy;
    }
@@ -198,7 +199,7 @@ bool Golf::releaseball() {
       bally = 50+ballrad+3;
       dy = -dy;
    }
-   cout << radline << " " << dx << " " << dy << endl;
+   cout << radline << "dx dy  " << dx << " " << dy << endl;
    gfx_flush();
    usleep(75000);
    gfx_clear();
