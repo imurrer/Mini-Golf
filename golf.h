@@ -19,6 +19,7 @@ class Golf {
     bool releaseball();
     bool throughMill();
     bool inhole();
+    void resetplacements();
   private:
     float angWM;
     float bx, by, ty, tx, l, w;
