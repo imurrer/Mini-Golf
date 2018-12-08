@@ -238,19 +238,19 @@ bool Golf::releaseball() {
       else if(radline <= 97){
          if(dx!=0){
            dx = dx-minusX; //do angle stuff with direction of ball
-           if(minusX>0)
+           if(dx>0)
               minusX+=3;
-           else if(minusX<0)
+           else if(dx<0)
               minusX-=3;
          }
          if(dy!=0){
            dy = dy-minusY;
-           if(minusY>0)
+           if(dy>0)
               minusY+=3;
-           else if(minusY<0)
+           else if(dy<0)
               minusY-=3;
          }
-         cout << "5" << minusX << " "<< minusY << endl;
+         cout << "5" <<"  "<< minusX << " "<< minusY << endl;
       }
       
       cout << "ball points:" << endl;
