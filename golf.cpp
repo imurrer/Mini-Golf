@@ -118,7 +118,7 @@ void Golf::releaseball() {
       bool win = inhole();
       display();
       rotateMill();
-      //ballx = dx + ballx;
+      ballx = dx + ballx;
       bally = dy + bally;
       if(inMill) {
          cout << "winner??" << endl;
@@ -157,8 +157,6 @@ void Golf::releaseball() {
       bally = 50+ballrad+1;
       dy = -dy;
    }
-  // if ((bally >= 250-ballrad && bally < 550) || bally <= 50+ballrad)
-    //  dy=-dy;
    gfx_flush();
    usleep(85000);
    gfx_clear();
