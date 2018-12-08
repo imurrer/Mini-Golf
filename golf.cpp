@@ -142,7 +142,7 @@ void Golf::releaseball() {
   // if ((bally >= 250-ballrad && bally < 550) || bally <= 50+ballrad)
     //  dy=-dy;
    gfx_flush();
-   usleep(70000);
+   usleep(85000);
    gfx_clear();
   }
   END: {}
