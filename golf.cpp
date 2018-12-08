@@ -141,24 +141,24 @@ bool Golf::releaseball() {
          minus +=1;
       }
       else if(radline <= 357 && radline > 267){
-         dx = 200-minus; //do angle stuff with direction of ball
-         dy = 220-minus;
-         minus +=2;
+         dx = radline*.2-minus; //do angle stuff with direction of ball
+         dy = radline*.4-minus;
+         minus +=1.5;
       }
       else if(radline <= 267 && radline > 177){
-         dx = 200-minus; //do angle stuff with direction of ball
-         dy = 220-minus;
-         minus +=3;
+         dx = radline*.2-minus; //do angle stuff with direction of ball
+         dy = radline*.4-minus;
+         minus +=2;
       }
       else if(radline <= 177 && radline > 97){
-         dx = 200-minus; //do angle stuff with direction of ball
-         dy = 220-minus;
-         minus +=4;
+         dx = radline*.2-minus; //do angle stuff with direction of ball
+         dy = radline*.4-minus;
+         minus +=2.5;
       }
       else if(radline <= 97){
-         dx = 200-minus; //do angle stuff with direction of ball
-         dy = 220-minus;
-         minus +=5;
+         dx = radline*.2-minus; //do angle stuff with direction of ball
+         dy = radline*4-minus;
+         minus +=3;
       }
       
       ballx = dx + ballx;
