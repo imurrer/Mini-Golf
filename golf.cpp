@@ -104,7 +104,6 @@ void Golf::changearrow(char c){
             if (arrowy >250)
                arrowy = 250;
          }
-       }
       gfx_line(ballx, bally, arrowx, arrowy);
       gfx_flush();
      // usleep(70000);
