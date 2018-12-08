@@ -111,8 +111,8 @@ void Golf::changearrow(char c){
  }
 
 void Golf::releaseball() {
-   float dx = (radline*.2);
-   float dy = (radline*.2);
+   float dx = (radline*.1);
+   float dy = (radline*.1);
    while (true) {
       bool inMill = throughMill();
       bool win = inhole();
@@ -180,22 +180,18 @@ bool Golf::throughMill() {
 
 bool Golf::inhole() {
    bool win = false;
-   if ((ballx-ballrad >=140) && (ballx-ballrad <= 145)) {
-      if ((bally+ballrad >=90) && (bally+ballrad<=95)) {
+   if ((ballx-ballrad >=135) && (ballx+ballrad <= 160) && (bally+ballrad <=110) && (bally-ballrad >=85)) {
          win = true;
       }
-      if ((bally-ballrad <=110) && (bally-ballrad>=105)){
+   if ((ballx-ballrad >=140) && (ballx+ballrad <= 165) && (bally+ballrad <=110) && (bally-ballrad >=85)) {
          win = true;
       }
-   }
-   if ((ballx+ballrad >=155) && (ballx+ballrad <= 160)) {
-      if ((bally+ballrad >=90) && (bally+ballrad<=95)) {
+   if ((ballx-ballrad >=135) && (ballx+ballrad <= 160) && (bally+ballrad <=115) && (bally-ballrad >=90)) {
          win = true;
       }
-      if ((bally-ballrad <=110) && (bally-ballrad>=105)){
+    if ((ballx-ballrad >=140) && (ballx+ballrad <= 165) && (bally+ballrad <=115) && (bally-ballrad >=90)) {
          win = true;
       }
-   }
    return win;
 }
    
