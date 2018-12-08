@@ -141,11 +141,11 @@ void Golf::releaseball() {
       dx = -dx;
       ballx = 100+ballrad+1;
    }
-   if (bally >= 250-ballrad){
+   if (bally >= 250-ballrad && bally < 550){
       dy = -dy;
       bally = 250-ballrad-1;
    }
-   else if(bally <= 550+ballrad){ 
+   else if(bally <= 550+ballrad && bally > 250){ 
       dy = -dy;
       bally = 550+ballrad+1;
    }
