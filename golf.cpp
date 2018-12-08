@@ -133,11 +133,27 @@ void Golf::releaseball() {
       bally = dy + bally;
    //if ((ballx <=0) || (bally <=0))
      // break;
-   if (ballx >= 500-ballrad || ballx <= 100+ballrad) 
+   if (ballx >= 500-ballrad){
       dx = -dx;
-   if ((bally >= 250 && bally <= 550+ballrad) || bally >= 750-ballrad || bally <= 50+ballrad){
+      balx = 500-ballrad-1;
+   }
+   else if(ballx <= 100+ballrad){
+      dx = -dx;
+      ballx = 100+ballrad+1;
+   }
+   if ((bally >= 250-ballrad){
       dy = -dy;
-      cout << triX1 << " " << triX4 << endl;
+      bally = 250-ballrad-1;
+   }
+   else if(bally <= 550+ballrad){ 
+      dy = -dy;
+      bally = 550+ballrad+1;
+   }
+   else if(bally >= 750-ballrad){
+      bally = 750-ballrad-1;
+   }
+   else if(bally <= 50+ballrad){
+      bally = 50+ballrad+1;
    }
   // if ((bally >= 250-ballrad && bally < 550) || bally <= 50+ballrad)
     //  dy=-dy;
