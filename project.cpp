@@ -22,8 +22,8 @@ int main() {
     gfx_text(170, 400, "Hit space bar when you are ready to putt.");
     gfx_text(195, 650, "If you are ready to play, hit p!");
     if (gfx_event_waiting()) {
-      f= gfx_wait();
-      if (f=='p') {
+      c= gfx_wait();
+      if (c=='p') {
         break;
       }
     }  
