@@ -7,11 +7,26 @@ int main() {
   Golf h1;
   bool loop = true;
   bool win  = false;
+  bool directions = true;
   char c;
+  
+  gfx_open(600, 800, "Directions");
+  while (directions) {
+    gfx_color(170, 184, 255);
+    gfx_text(230, 350, "Welcome to Mini-Golf!");
+    gfx_text(200, 375, "Click to adjust the direction and speed of your ball. This will be shown as the blue line."); 
+    gfx_text(230, 400, "Hit space bar when you are ready to putt.");
+    gfx_text(215, 425, "When you are ready to play, hit space bar to continue!");
+    if (gfx_event_waiting()) {
+      if (c==32) {
+        break;
+      }
+    }  
+   }
+  
   gfx_open(600, 800, "Putt Putt");
   
   while (loop) {
-     h1.display();
      h1.rotateMill();
      h1.displayarrow();
      if (gfx_event_waiting()) {
