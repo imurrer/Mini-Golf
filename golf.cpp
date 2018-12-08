@@ -111,8 +111,8 @@ void Golf::changearrow(char c){
  }
 
 void Golf::releaseball() {
-   float dx = (radline*.85);
-   float dy = (radline*.85);
+   float dx = (radline*.45);
+   float dy = (radline*.45);
    cout << radline << endl;
    while (true) {
       bool inMill = throughMill();
@@ -122,6 +122,8 @@ void Golf::releaseball() {
          cout << "winner??" << endl;
          ballx = 300;
          bally = 250-ballrad;
+         dx = -dx;
+         dy = -dy;
       }
       cout << "yodel" << ballx << " " << bally << endl;
       ballx = dx + ballx;
