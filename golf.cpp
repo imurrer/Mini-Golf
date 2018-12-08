@@ -77,14 +77,12 @@ void Golf::rotateMill() {
 
 void Golf::displayarrow() {
    gfx_color(24, 60, 242);
-   if ((bally >=550) && (bally <= 750)) {
-      gfx_line(ballx, bally, arrowx, arrowy);
-   }
-   if ((bally <=250) && (bally >=50)) {
-      //arrowy= 150;
-      //arrowx = 300;
-      gfx_line(ballx, bally, 300, 150);
-   }
+ //  if ((bally >=550) && (bally <= 750)) {
+   gfx_line(ballx, bally, arrowx, arrowy);
+//   }
+  // if ((bally <=250) && (bally >=50)) {
+    //  gfx_line(ballx, bally, 300, 150);
+  // }
 }
 
 void Golf::changearrow(char c){  
@@ -249,6 +247,14 @@ bool Golf::releaseball() {
    gfx_clear();
   }
   END: {}
+  if ((bally >=550) && (bally <= 750)) {
+     arrowx = 300;
+     arrowy = 675;
+   }
+   if ((bally <=250) && (bally >=50)) {
+      arrowx = 300;
+      arrowy= 150;
+   }
   return endGame;
 }
 
