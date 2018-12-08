@@ -172,7 +172,7 @@ bool Golf::throughMill() {
      cout << "1" << endl;
     if ((ballx > 287.5) && (ballx < 312.5)) {
        cout << "2" << endl;
-      if (bally-.5*ballrad < 550 && bally+ballrad > 250) {
+      if (bally-1.25*ballrad < 550 && bally+ballrad+1 > 250) {
         inMill = true;
       }
     }
