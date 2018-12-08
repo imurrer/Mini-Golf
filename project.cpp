@@ -11,9 +11,11 @@ int main() {
   bool windisplay = true;
   char c, d, f;
   
-  BEGIN: { }
-
   gfx_open(600, 800, "Putt Putt");
+  
+  BEGIN: { }
+  
+  h1.resetplacements();
   
   while (directions) {
     gfx_color(170, 184, 255);
