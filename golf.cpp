@@ -113,11 +113,19 @@ void Golf::changearrow(char c){
 bool Golf::releaseball() {
    bool endGame = false;
    float minus=0, dx = 1, dy = 1;
-   while (minus<dx && minus<dx) {    //can't be while dx>0 and dy >0
-      float x = arrowx-ballx, y = arrowy-bally, ratio = y/x;
+   while (minus<abs(dx) && minus<abs(dy)) {    //can't be while dx>0 and dy >0; what is dx or dy is negative
+      float x = arrowx-ballx, y = arrowy-bally;
       radline = pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5);
-      dx = (radline*.4);
-      dy = ratio*dx;  
+      if(x==0){
+         dx = 0;
+         ratio = radline*.4;
+      }
+      else if(y==0)
+         dy = 0;
+      else{
+         dx = (radline*.4);
+         dy = ratio*dx;  
+      }
       cout << "ratio" << ratio <<" "<< dx << " " <<dy << endl;
       bool inMill = throughMill();
       bool win = inhole();
@@ -147,8 +155,8 @@ bool Golf::releaseball() {
       }
       else if(radline <= 357 && radline > 267){
          dx = dx-minus; //do angle stuff with direction of ball
-         dy = dy-minus;
-         minus +=1.5;
+         dy = dy-minus;             //what if dy is already negative
+         minus +=1.5;      
       }
       else if(radline <= 267 && radline > 177){
          dx = dx-minus; //do angle stuff with direction of ball
