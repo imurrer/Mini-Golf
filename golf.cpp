@@ -137,6 +137,7 @@ bool Golf::releaseball() {
       rotateMill();
       cout << radline << "radline" <<endl;
       if(radline <= 447.3 && radline > 357){
+         cout << "1" << endl;
          dx = 200-minus; //do angle stuff with direction of ball
          dy = 220-minus;
          minus +=1;
@@ -158,8 +159,9 @@ bool Golf::releaseball() {
       }
       else if(radline <= 97){
          dx = radline*.2-minus; //do angle stuff with direction of ball
-         dy = radline*4-minus;
+         dy = radline*.4-minus;
          minus +=3;
+         cout << "5" << endl;
       }
       
       ballx = dx + ballx;
