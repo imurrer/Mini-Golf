@@ -132,10 +132,11 @@ void Golf::releaseball() {
       dy = -dy;
    if((bally >= 250-ballrad && bally < 550) || (bally<= 50+ballrad))
       dy = -dy;
-}
+      
    gfx_flush();
    usleep(35000);
    gfx_clear();
+   }
 }
 
 bool Golf::throughMill() {
