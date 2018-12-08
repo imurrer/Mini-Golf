@@ -118,7 +118,7 @@ bool Golf::releaseball() {
       radline = pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5);
       if(x==0){
          dx = 0;
-         ratio = radline*.4;
+         dy = radline*.4;
       }
       else if(y==0)
          dy = 0;
