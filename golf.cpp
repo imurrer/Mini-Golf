@@ -111,23 +111,33 @@ void Golf::changearrow(char c){
  }
 
 void Golf::releaseball() {
+   float dx = (radline*.85);
+   float dy = (radline*.85);
+   cout << radline << endl;
    while (true) {
+      bool inMill = throughMill();
+      display();
+      rotateMill();
+      if(inMill) {
+         cout << "winner??" << endl;
+         ballx = 300;
+         bally = 250-ballrad;
+      }
       cout << "yodel" << ballx << " " << bally << endl;
-      ballx = ballx+ (radline * 0.85);
-      bally = bally + (radline * 0.85);
-   if ((ballx <=0) || (bally <=0))
-      break;
-   if (ballx >= 500-ballrad) 
-      ballx = -ballx;
-   if (ballx <= 100+ballrad)
-      ballx = -ballx;
-   if (bally <= 550+ballrad)
-      bally = -bally;
-   if (bally >= 750 - ballrad)
+      ballx = dx + ballx;
+      bally = dy + bally;
+   //if ((ballx <=0) || (bally <=0))
+     // break;
+   if (ballx >= 500-ballrad || ballx <= 100+ballrad) 
+      dx = -dx;
+   if ((bally > 250 && bally <= 550+ballrad) || bally >= 750-ballrad)
+      dy = -dy;
+   if ((bally >= 250-ballrad && bally < 550) || (bally <= 50+ballrad)
       bally=-bally;
-}
-   //usleep(70000);
-   //gfx_clear();
+   gfx_flush();
+   usleep(35000);
+   gfx_clear();
+  }
 }
 
 bool Golf::throughMill() {
