@@ -117,7 +117,7 @@ void Golf::changearrow(char c){
 
 bool Golf::releaseball() {
    bool endGame = false;
-   float minusX=0, minusY=0 dx = 1, dy = 1;
+   float minusX=0, minusY=0, dx = 1, dy = 1;
    cout << "AT BEGIN " << endl;
    cout << "ABS values" << abs(dx) <<" " <<abs(dy) << endl;
    radline = pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5);
