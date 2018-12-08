@@ -118,12 +118,14 @@ bool Golf::releaseball() {
       bool inMill = throughMill();
       bool win = inhole();
       if(inMill) {
+         display();
          cout << "winner??" << endl;
          ballx = 300;
          bally = 250-ballrad-1;
          inMill = false;
       }
       if(win){
+         display();
          cout << "WINNN" << endl;
          endGame = true;
          goto END;
