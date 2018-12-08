@@ -141,36 +141,36 @@ void Golf::releaseball() {
 }
 
 bool Golf::throughMill() {
+  bool inMill = false;
   if(triY1!=550 && triY4!=550) {
     if ((ballx > 287.5) && (ballx < 312.5)) {
       if (bally+ballrad > 537.5) {
-        return true;
+        inMill = true;
       }
     }
   }
-  else 
-    return false;
+  return inMill;
 }
 
 bool Golf::inhole() {
+   bool win = false;
    if ((ballx-ballrad >=140) && (ballx-ballrad <= 145)) {
       if ((bally+ballrad >=90) && (bally+ballrad<=95)) {
-         return true;
+         win = true;
       }
       if ((bally-ballrad <=110) && (bally-ballrad>=105)){
-         return true;
+         win = true;
       }
    }
    if ((ballx+ballrad >=155) && (ballx+ballrad <= 160)) {
       if ((bally+ballrad >=90) && (bally+ballrad<=95)) {
-         return true;
+         win = true;
       }
       if ((bally-ballrad <=110) && (bally-ballrad>=105)){
-         return true;
+         win = true;
       }
    }
-  else
-     return false;
+   return win;
 }
    
       
