@@ -154,7 +154,7 @@ bool Golf::throughMill() {
   bool inMill = false;
   if(triY1!=550 && triY4!=550) {
     if ((ballx > 287.5) && (ballx < 312.5)) {
-      if (bally+ballrad < 537.5) {
+      if (bally-ballrad < 537.5) {
         inMill = true;
       }
     }
