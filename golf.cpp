@@ -274,7 +274,6 @@ bool Golf::releaseball() {
            else if(dy<0)
               minusY-=3;
          }
-         cout << "5" <<"  "<< minusX << " "<< minusY << endl;
       }
       
       cout << "ball points:" << endl;
