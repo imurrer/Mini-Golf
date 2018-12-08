@@ -44,7 +44,7 @@ int main() {
         if (c== 1) {
            h1.changearrow(c);
           cout << "hey" << endl;
-          break;
+          c = gfx_wait();
         }
        if (c== 32) { //space bar to release ball
          c=0;
@@ -54,6 +54,7 @@ int main() {
          win = h1.releaseball();
          if(win)
            goto END;
+         c = gfx_wait();
        }
        if (c == 'q') {
          break;
