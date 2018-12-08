@@ -113,10 +113,11 @@ void Golf::changearrow(char c){
 bool Golf::releaseball() {
    bool endGame = false;
    float minus=0, dx = 1, dy = 1;
-   dx = (radline*.2);
-   dy = (radline*.4);
    while (minus<dx && minus<dx) {    //can't be while dx>0 and dy >0
+      float x = arrowx-ballx, y = arrowy-bally, ratio = y/x;
       radline = pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5);
+      dx = (radline*.4);
+      dy = ratio*dx;  
       bool inMill = throughMill();
       bool win = inhole();
       if(inMill) {
@@ -139,28 +140,28 @@ bool Golf::releaseball() {
       
       if(radline <= 447.3 && radline > 357){
          cout << "1" << endl;
-         dx = 200-minus; //do angle stuff with direction of ball
-         dy = 220-minus;
+         dx = dx-minus; //do angle stuff with direction of ball
+         dy = dy-minus;
          minus +=1;
       }
       else if(radline <= 357 && radline > 267){
-         dx = radline*.2-minus; //do angle stuff with direction of ball
-         dy = radline*.4-minus;
+         dx = dx-minus; //do angle stuff with direction of ball
+         dy = dy-minus;
          minus +=1.5;
       }
       else if(radline <= 267 && radline > 177){
-         dx = radline*.2-minus; //do angle stuff with direction of ball
-         dy = radline*.4-minus;
+         dx = dx-minus; //do angle stuff with direction of ball
+         dy = dy-minus;
          minus +=2;
       }
       else if(radline <= 177 && radline > 97){
-         dx = radline*.2-minus; //do angle stuff with direction of ball
-         dy = radline*.4-minus;
+         dx = dx-minus; //do angle stuff with direction of ball
+         dy = dy-minus;
          minus +=2.5;
       }
       else if(radline <= 97){
-         dx = radline*.2-minus; //do angle stuff with direction of ball
-         dy = radline*.4-minus;
+         dx = dx-minus; //do angle stuff with direction of ball
+         dy = dy-minus;
          minus +=3;
          cout << "5" << minus << endl;
       }
