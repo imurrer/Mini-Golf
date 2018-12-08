@@ -111,8 +111,8 @@ void Golf::changearrow(char c){
  }
 
 void Golf::releaseball() {
-   float dx = (radline*.2);
-   float dy = (radline*.2);
+   float dx = (radline*.1);
+   float dy = (radline*.1);
    while (true) {
       bool inMill = throughMill();
       bool win = inhole();
