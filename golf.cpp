@@ -77,7 +77,14 @@ void Golf::rotateMill() {
 
 void Golf::displayarrow() {
    gfx_color(24, 60, 242);
-   gfx_line(ballx, bally, arrowx, arrowy);
+   if ((bally >=550) && (bally <= 750)) {
+      gfx_line(ballx, bally, arrowx, arrowy);
+   }
+   else if ((bally <=250) && (bally >=50)) {
+      arrowy= 150;
+      arrowx = 300;
+      gfx_line(ballx, bally, arrowx, arrowy);
+   }
 }
 
 void Golf::changearrow(char c){  
