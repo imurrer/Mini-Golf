@@ -111,32 +111,23 @@ void Golf::changearrow(char c){
  }
 
 void Golf::releaseball() {
-   bool inMill = throughMill();
    while (true) {
-      display();
-      rotateMill();
-      if(inMill){
-        ballx = 300;
-        bally = 250+ballrad;
-      }
       cout << "yodel" << ballx << " " << bally << endl;
-      float dx = (radline * 0.85);
-      float dy = (radline * 0.85);
-      ballx = dx + ballx;
-      bally = dy + bally;
-   //if ((ballx <=0) || (bally <=0))
-     // break;
-   if (ballx >= 500-ballrad || ballx <= 100+ballrad) 
-      dx = -dx;
-   if ((bally > 250 && bally <= 550+ballrad) || bally >= 750-ballrad)
-      dy = -dy;
-   if((bally >= 250-ballrad && bally < 550) || (bally<= 50+ballrad))
-      dy = -dy;
-      
-   gfx_flush();
-   usleep(35000);
-   gfx_clear();
-   }
+      ballx = ballx+ (radline * 0.85);
+      bally = bally + (radline * 0.85);
+   if ((ballx <=0) || (bally <=0))
+      break;
+   if (ballx >= 500-ballrad) 
+      ballx = -ballx;
+   if (ballx <= 100+ballrad)
+      ballx = -ballx;
+   if (bally <= 550+ballrad)
+      bally = -bally;
+   if (bally >= 750 - ballrad)
+      bally=-bally;
+}
+   //usleep(70000);
+   //gfx_clear();
 }
 
 bool Golf::throughMill() {
@@ -150,6 +141,29 @@ bool Golf::throughMill() {
   else 
     return false;
 }
+
+bool Golf::inhole() {
+   if ((ballx-rad >=140) && (ballx-rad <= 145)) {
+      if ((bally+rad >=90) && (bally+rad<=95)) {
+         return true;
+      }
+      if ((bally-rad <=110) && (bally-rad>=105)){
+         return true;
+      }
+   }
+   if ((ballx+rad >=155) && (ballx+rad <= 160)) {
+      if ((bally+rad >=90) && (bally+rad<=95)) {
+         return true;
+      }
+      if ((bally-rad <=110) && (bally-rad>=105)){
+         return true;
+      }
+   }
+  else
+     return false;
+}
+   
+      
 
 
 
