@@ -113,7 +113,6 @@ void Golf::changearrow(char c){
 void Golf::releaseball() {
    float dx = (radline*.2);
    float dy = (radline*.2);
-   cout << radline << endl;
    while (true) {
       bool inMill = throughMill();
       bool win = inhole();
@@ -154,7 +153,7 @@ bool Golf::throughMill() {
   bool inMill = false;
   if(triY1!=550 && triY4!=550) {
     if ((ballx > 287.5) && (ballx < 312.5)) {
-      if (bally-ballrad < 537.5) {
+      if (bally-ballrad < 550) {
         inMill = true;
       }
     }
