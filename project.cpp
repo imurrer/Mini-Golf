@@ -28,7 +28,8 @@ int main() {
       }
     }  
    }
-  
+  cout << endl;
+  cout << "second WHILE "<< endl;
   while (loop) {
      float release = 0;
      RESTART: { }
