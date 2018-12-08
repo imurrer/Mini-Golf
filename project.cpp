@@ -14,7 +14,7 @@ int main() {
   gfx_open(600, 800, "Putt Putt");
   
   BEGIN: { }
-  
+  gfx_clear();
   h1.resetplacements();
   
   while (directions) {
