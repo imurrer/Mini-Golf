@@ -21,11 +21,14 @@ int main() {
     gfx_text(30, 375, "Click to adjust the direction and speed of your ball. This will be shown as the blue line."); 
     gfx_text(170, 400, "Hit space bar when you are ready to putt.");
     gfx_text(195, 650, "If you are ready to play, hit 'p'!");
+    gfx_text(195, 675, "If you want to quit, hit 'q'.");
     if (gfx_event_waiting()) {
       c= gfx_wait();
       if (c=='p') {
         break;
       }
+      if (c=='q') {
+        goto END;
     }  
    }
   while (loop) {
