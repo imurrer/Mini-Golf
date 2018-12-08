@@ -12,11 +12,13 @@ int main() {
   char c, d, f;
   
   BEGIN: { }
-  gfx_open(600, 800, "Directions");
+
+  gfx_open(600, 800, "Putt Putt");
+  
   while (directions) {
     gfx_color(170, 184, 255);
     gfx_text(230, 350, "Welcome to Mini-Golf!");
-    gfx_text(110, 375, "Click to adjust the direction and speed of your ball. This will be shown as the blue line."); 
+    gfx_text(90, 375, "Click to adjust the direction and speed of your ball. This will be shown as the blue line."); 
     gfx_text(230, 400, "Hit space bar when you are ready to putt.");
     gfx_text(215, 425, "When you are ready to play, hit space bar to continue!");
     if (gfx_event_waiting()) {
@@ -27,9 +29,8 @@ int main() {
     }  
    }
   
-  gfx_open(600, 800, "Putt Putt");
-  
   while (loop) {
+     h1.display();
      h1.rotateMill();
      h1.displayarrow();
      if (gfx_event_waiting()) {
@@ -52,7 +53,8 @@ int main() {
      gfx_clear();
   }
   END: {}
-  gfx_open(600, 800, "Win!");
+  if (win) {
+  gfx_clear();
   while (windisplay) {
     gfx_color(170, 184, 255);
    // gfx_change_font( -sony-fixed-medium-r-normal--24-170-100-100-c-120-iso8859-1);
@@ -65,6 +67,7 @@ int main() {
         goto BEGIN;
       }
     }
+  }
   }
   //h1.displayWin();
 }
