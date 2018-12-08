@@ -97,6 +97,7 @@ void Golf::changearrow(char c){
                 arrowy = 550;
              if (arrowy > 750)
                 arrowy = 750;
+          }
          if ((bally > 50) && (bally <250)) {
             if (arrowy <50) 
                arrowy = 50;
