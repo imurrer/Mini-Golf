@@ -30,7 +30,7 @@ int main() {
    }
   
   while (loop) {
-      float release = 0;
+     float release = 0;
      RESTART: { }
      h1.display();
      h1.rotateMill();
@@ -42,15 +42,13 @@ int main() {
            h1.changearrow(c);
         }
        if (c== 32) { //space bar to release ball
+         c=0;
          release++;
          cout << endl;
          cout << release << endl;
          win = h1.releaseball();
          if(win)
            goto END;
-         else
-           gfx_clear();
-           goto RESTART;
        }
        if (c == 'q') {
          break;
