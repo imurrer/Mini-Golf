@@ -24,7 +24,7 @@ Golf::Golf() {
 
 Golf::~Golf() { }
 
-void resetplacements() {
+void Golf::resetplacements() {
    ballx = 300;
    bally= 740;
    arrowx= 300;
