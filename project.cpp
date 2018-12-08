@@ -34,7 +34,7 @@ int main() {
      h1.displayarrow();
      if (gfx_event_waiting()) {
        c = gfx_wait();
-       h1.displayarrow();
+      // h1.displayarrow();
        if (c== 1) {
           h1.changearrow(c);
           c = gfx_wait();
