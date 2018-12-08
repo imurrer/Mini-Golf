@@ -122,6 +122,7 @@ void Golf::releaseball() {
          bally = 250-ballrad-1;
          inMill = false;
       }
+       cout << "yodel" << ballx << " " << bally << endl;
       display();
       rotateMill();
       ballx = dx + ballx;
@@ -131,7 +132,7 @@ void Golf::releaseball() {
          cout << "WINNN" << endl;
          goto END;
       }
-      cout << "yodel" << ballx << " " << bally << endl;
+     
    //if ((ballx <=0) || (bally <=0))
      // break;
    if (ballx >= 500-ballrad){
