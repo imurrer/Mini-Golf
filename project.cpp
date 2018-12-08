@@ -33,6 +33,7 @@ int main() {
         goto END;
     }  
    }
+  }
   while (loop) {
      h1.display();
      h1.rotateMill();
