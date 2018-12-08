@@ -172,7 +172,7 @@ bool Golf::releaseball() {
       
       if(radline > 357){
          cout << "1" << endl;
-         if(dx!=0){
+         if(dx!=0)
            dx = dx-minus;
          if(dy!=0)
            dy = dy-minus;
