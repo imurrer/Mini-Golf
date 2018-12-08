@@ -17,10 +17,10 @@ int main() {
   
   while (directions) {
     gfx_color(170, 184, 255);
-    gfx_text(200, 350, "Welcome to Mini-Golf!");
-    gfx_text(75, 375, "Click to adjust the direction and speed of your ball. This will be shown as the blue line."); 
-    gfx_text(200, 400, "Hit space bar when you are ready to putt.");
-    gfx_text(175, 425, "When you are ready to play, hit p to play!");
+    gfx_text(190, 350, "Welcome to Mini-Golf!");
+    gfx_text(50, 375, "Click to adjust the direction and speed of your ball. This will be shown as the blue line."); 
+    gfx_text(190, 400, "Hit space bar when you are ready to putt.");
+    gfx_text(190, 650, "If you are ready to play, hit p!");
     if (gfx_event_waiting()) {
       f= gfx_wait();
       if (f=='p') {
