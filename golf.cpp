@@ -115,7 +115,7 @@ bool Golf::releaseball() {
    float minus=0, dx = 1, dy = 1;
    dx = (radline*.2);
    dy = (radline*.4);
-   while (dx > 0 && dy > 0) {
+   while (true) {    //can't be while dx>0 and dy >0
       radline = pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5);
       bool inMill = throughMill();
       bool win = inhole();
@@ -133,7 +133,6 @@ bool Golf::releaseball() {
          goto END;
       }
       cout << "yodel" << ballx << " " << bally << endl;
-      cout << minus << "minus" << endl;
       display();
       rotateMill();
       cout << radline << "radline" <<endl;
@@ -168,7 +167,7 @@ bool Golf::releaseball() {
       cout << "ball points:" << endl;
       cout << ballx << " " << bally << " dy " << dy << endl;
       ballx = dx + ballx;
-      bally = dy + bally;
+      bally = dy - bally;
       cout << ballx << " " << bally << endl;
      
    //if ((ballx <=0) || (bally <=0))
