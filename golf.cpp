@@ -121,7 +121,7 @@ void Golf::releaseball() {
       if(inMill) {
          cout << "winner??" << endl;
          ballx = 300;
-         bally = 250-ballrad;
+         bally = 250-ballrad-1;
          inMill = false;
       }
       if(win){
@@ -170,7 +170,7 @@ bool Golf::throughMill() {
   bool inMill = false;
   if(triY1!=550 && triY4!=550) {
     if ((ballx > 287.5) && (ballx < 312.5)) {
-      if (bally-ballrad < 550 && bally+ballrad > 250) {
+      if (bally-.5*ballrad < 550 && bally+ballrad > 250) {
         inMill = true;
       }
     }
