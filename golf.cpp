@@ -115,7 +115,7 @@ void Golf::releaseball() {
    while (true) {
       display();
       rotateMill();
-      if(inhMill){
+      if(inMill){
         ballx = 300;
         bally = 250+ballrad;
       }
