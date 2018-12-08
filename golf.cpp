@@ -118,6 +118,7 @@ bool Golf::releaseball() {
       radline = pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5);
       dx = (radline*.4);
       dy = ratio*dx;  
+      cout << "ratio" << ratio <<" "<< dx << " " <<dy << endl;
       bool inMill = throughMill();
       bool win = inhole();
       if(inMill) {
