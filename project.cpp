@@ -35,6 +35,8 @@ int main() {
      h1.display();
      h1.rotateMill();
      h1.displayarrow();
+    cout << c << endl;
+    cout << endl;
      if (gfx_event_waiting()) {
        c = gfx_wait();
         h1.displayarrow();
@@ -60,8 +62,6 @@ int main() {
   }
   END: {}
   if (win) {
-    cout << endl;
-    cout << "END WIN " << endl;
     gfx_clear();
     while (windisplay) {
       gfx_color(170, 184, 255);
@@ -77,7 +77,6 @@ int main() {
       }
     }
   }
-  cout << "REAL END" <<endl;
   //h1.displayWin();
 }
     
