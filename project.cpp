@@ -27,7 +27,7 @@ int main() {
        }
      }
      gfx_flush();
-     usleep(7000);
+     usleep(70000);
      gfx_clear();
   }
 }
