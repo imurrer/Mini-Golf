@@ -134,7 +134,6 @@ bool Golf::releaseball() {
       cout << "yodel" << ballx << " " << bally << endl;
       display();
       rotateMill();
-      
       if(radline <= 447.3 && radline > 357){
          dx = 200-minus; //do angle stuff with direction of ball
          dy = 220-minus;
@@ -191,8 +190,9 @@ bool Golf::releaseball() {
       bally = 50+ballrad+3;
       dy = -dy;
    }
+   cout << radline << " " << dx << " " << dy << endl;
    gfx_flush();
-   usleep(85000);
+   usleep(75000);
    gfx_clear();
   }
   END: {}
