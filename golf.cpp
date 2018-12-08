@@ -111,10 +111,11 @@ void Golf::changearrow(char c){
  }
 
 void Golf::releaseball() {
+   bool inMill = throughMill();
    while (true) {
       display();
       rotateMill();
-      if(throughMill){
+      if(inhMill){
         ballx = 300;
         bally = 250+ballrad;
       }
