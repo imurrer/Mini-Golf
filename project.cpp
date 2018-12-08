@@ -20,7 +20,7 @@ int main() {
     gfx_text(210, 350, "Welcome to Mini-Golf!");
     gfx_text(30, 375, "Click to adjust the direction and speed of your ball. This will be shown as the blue line."); 
     gfx_text(170, 400, "Hit space bar when you are ready to putt.");
-    gfx_text(195, 650, "If you are ready to play, hit p!");
+    gfx_text(195, 650, "If you are ready to play, hit 'p'!");
     if (gfx_event_waiting()) {
       c= gfx_wait();
       if (c=='p') {
@@ -60,17 +60,20 @@ int main() {
       gfx_color(170, 184, 255);
      // gfx_changefont(1 );
       gfx_text(275, 400, "WINNER!");
-      gfx_text(250, 700, "Hit a to play again.");
+      gfx_text(250, 700, "Hit 'a' to play again.");
+      gfx_text(250, 725, "Hit 'q' to quit.");
       if (gfx_event_waiting()) {
-        d = gfx_wait();
-        if (d=='a') {
-          break;
+        c = gfx_wait();
+        if (c=='a') {
           goto BEGIN;
+        }
+        if (c =='q') {
+          break;
         }
       }
     }
-  }
   //h1.displayWin();
+  }
 }
     
     
