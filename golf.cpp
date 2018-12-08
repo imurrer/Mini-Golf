@@ -169,7 +169,9 @@ void Golf::releaseball() {
 bool Golf::throughMill() {
   bool inMill = false;
   if(triY1!=550 && triY4!=550) {
+     cout << "1" << endl;
     if ((ballx > 287.5) && (ballx < 312.5)) {
+       cout << "2" << endl;
       if (bally-.5*ballrad < 550 && bally+ballrad > 250) {
         inMill = true;
       }
