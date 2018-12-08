@@ -132,7 +132,7 @@ bool Golf::releaseball() {
          goto END;
       }
       cout << "yodel" << ballx << " " << bally << endl;
-      cout << minus << endl;
+      cout << minus << "minus" << endl;
       display();
       rotateMill();
       cout << radline << "radline" <<endl;
@@ -161,7 +161,7 @@ bool Golf::releaseball() {
          dx = radline*.2-minus; //do angle stuff with direction of ball
          dy = radline*.4-minus;
          minus +=3;
-         cout << "5" << endl;
+         cout << "5" << minus << endl;
       }
       
       ballx = dx + ballx;
@@ -206,9 +206,7 @@ bool Golf::releaseball() {
 bool Golf::throughMill() {
   bool inMill = false;
   if(triY1!=550 && triY4!=550) {
-     cout << "1" << endl;
     if ((ballx > 287.5) && (ballx < 312.5)) {
-       cout << "2" << endl;
       if (bally-1.5*ballrad < 550 && bally+ballrad > 250) {
         inMill = true;
       }
