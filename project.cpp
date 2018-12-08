@@ -54,7 +54,7 @@ int main() {
   gfx_open(600, 800, "Win!");
   while (windisplay) {
     gfx_color(170, 184, 255);
-    gfx_change_font( -sony-fixed-medium-r-normal--24-170-100-100-c-120-iso8859-1);
+   // gfx_change_font( -sony-fixed-medium-r-normal--24-170-100-100-c-120-iso8859-1);
     gfx_text(275, 400, "WINNER!");
     gfx_text(250, 700, "Hit space bar to play again.");
     if (gfx_event_waiting()) {
