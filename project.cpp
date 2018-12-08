@@ -59,10 +59,10 @@ int main() {
     gfx_color(170, 184, 255);
     //gfx_changefont("12x24");
     gfx_text(275, 400, "WINNER!");
-    gfx_text(250, 700, "Hit space bar to play again.");
+    gfx_text(250, 700, "Hit a to play again.");
     if (gfx_event_waiting()) {
       d = gfx_wait();
-      if (d==32) {
+      if (d=='a') {
         break;
         goto BEGIN;
       }
