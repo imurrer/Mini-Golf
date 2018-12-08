@@ -44,6 +44,7 @@ int main() {
         if (c== 1) {
            h1.changearrow(c);
           cout << "hey" << endl;
+          break;
         }
        if (c== 32) { //space bar to release ball
          c=0;
