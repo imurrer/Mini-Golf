@@ -210,7 +210,7 @@ bool Golf::releaseball() {
             dy = dy-minusY;
          minusX +=3;
          minusY +=3;
-         cout << "5" << minus << endl;
+         cout << "5" << minusX << " "<< minusY << endl;
       }
       
       cout << "ball points:" << endl;
