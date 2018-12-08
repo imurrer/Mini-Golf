@@ -187,36 +187,68 @@ bool Golf::releaseball() {
          }
       }
       else if(radline <= 357 && radline > 267){
-         if(dx!=0)
-            dx = dx-minusX; //do angle stuff with direction of ball
-         if(dy!=0)
-            dy = dy-minusY;
-         minusX +=1.5;   
-         minusY +=1.5;  
+         if(dx!=0){
+           dx = dx-minusX; //do angle stuff with direction of ball
+           if(minusX>0)
+              minusX+=1.5;
+           else if(minusX<0)
+              minusX-=1.5;
+         }
+         if(dy!=0){
+           dy = dy-minusY;
+           if(minusY>0)
+              minusY+=1.5;
+           else if(minusY<0)
+              minusY-=1.5;
+         }
       }
       else if(radline <= 267 && radline > 177){
-         if(dx!=0)
-            dx = dx-minusX; //do angle stuff with direction of ball
-         if(dy!=0)
-          dy = dy-minusY;
-         minusX +=2;
-         minusY +=2;
+         if(dx!=0){
+           dx = dx-minusX; //do angle stuff with direction of ball
+           if(minusX>0)
+              minusX+=2;
+           else if(minusX<0)
+              minusX-=2;
+         }
+         if(dy!=0){
+           dy = dy-minusY;
+           if(minusY>0)
+              minusY+=2;
+           else if(minusY<0)
+              minusY-=2;
+         }
       }
       else if(radline <= 177 && radline > 97){
-         if(dx!=0)
-            dx = dx-minusX; //do angle stuff with direction of ball
-         if(dy!=0)
-            dy = dy-minusY;
-         minusX +=2.5;
-         minusY +=2.5;
+         if(dx!=0){
+           dx = dx-minusX; //do angle stuff with direction of ball
+           if(minusX>0)
+              minusX+=2.5;
+           else if(minusX<0)
+              minusX-=2.5;
+         }
+         if(dy!=0){
+           dy = dy-minusY;
+           if(minusY>0)
+              minusY+=2.5;
+           else if(minusY<0)
+              minusY-=2.5;
+         }
       }
       else if(radline <= 97){
-         if(dx!=0)
-            dx = dx-minusX; //do angle stuff with direction of ball
-         if(dy!=0)
-            dy = dy-minusY;
-         minusX +=3;
-         minusY +=3;
+         if(dx!=0){
+           dx = dx-minusX; //do angle stuff with direction of ball
+           if(minusX>0)
+              minusX+=3;
+           else if(minusX<0)
+              minusX-=3;
+         }
+         if(dy!=0){
+           dy = dy-minusY;
+           if(minusY>0)
+              minusY+=3;
+           else if(minusY<0)
+              minusY-=3;
+         }
          cout << "5" << minusX << " "<< minusY << endl;
       }
       
