@@ -170,6 +170,7 @@ bool Golf::releaseball() {
       rotateMill();
       cout << radline << "radline" <<endl;
       
+      cout << "HERE IS MINUS " << minus << endl;
       if(radline > 357){
         if(dx!=0){
            dx = dx-minusX; //do angle stuff with direction of ball
