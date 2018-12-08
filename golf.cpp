@@ -131,8 +131,8 @@ void Golf::releaseball() {
          goto END;
       }
       cout << "yodel" << ballx << " " << bally << endl;
-      ballx = dx + ballx;
-     // bally = dy + bally;
+     // ballx = dx + ballx;
+      bally = dy + bally;
    //if ((ballx <=0) || (bally <=0))
      // break;
    if (ballx >= 500-ballrad || ballx <= 100+ballrad) 
