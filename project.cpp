@@ -43,6 +43,7 @@ int main() {
         h1.displayarrow();
         if (c== 1) {
            h1.changearrow(c);
+          cout << "hey" << endl;
         }
        if (c== 32) { //space bar to release ball
          c=0;
