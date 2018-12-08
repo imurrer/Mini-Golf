@@ -143,19 +143,19 @@ bool Golf::throughMill() {
 }
 
 bool Golf::inhole() {
-   if ((ballx-rad >=140) && (ballx-rad <= 145)) {
-      if ((bally+rad >=90) && (bally+rad<=95)) {
+   if ((ballx-ballrad >=140) && (ballx-ballrad <= 145)) {
+      if ((bally+ballrad >=90) && (bally+ballrad<=95)) {
          return true;
       }
-      if ((bally-rad <=110) && (bally-rad>=105)){
+      if ((bally-ballrad <=110) && (bally-ballrad>=105)){
          return true;
       }
    }
-   if ((ballx+rad >=155) && (ballx+rad <= 160)) {
-      if ((bally+rad >=90) && (bally+rad<=95)) {
+   if ((ballx+ballrad >=155) && (ballx+ballrad <= 160)) {
+      if ((bally+ballrad >=90) && (bally+ballrad<=95)) {
          return true;
       }
-      if ((bally-rad <=110) && (bally-rad>=105)){
+      if ((bally-ballrad <=110) && (bally-ballrad>=105)){
          return true;
       }
    }
