@@ -137,8 +137,10 @@ void Golf::releaseball() {
      // break;
    if (ballx >= 500-ballrad || ballx <= 100+ballrad) 
       dx = -dx;
-   if ((bally >= 250 && bally <= 550+ballrad) || bally >= 750-ballrad || bally <= 50+ballrad)
+   if ((bally >= 250 && bally <= 550+ballrad) || bally >= 750-ballrad || bally <= 50+ballrad){
       dy = -dy;
+      cout << triX1 << " " << triX4 << endl;
+   }
   // if ((bally >= 250-ballrad && bally < 550) || bally <= 50+ballrad)
     //  dy=-dy;
    gfx_flush();
