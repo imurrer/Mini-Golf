@@ -114,7 +114,7 @@ bool Golf::releaseball() {
    bool endGame = false;
    float minus=0, dx = 1, dy = 1;
    while (minus<abs(dx) && minus<abs(dy)) {    //can't be while dx>0 and dy >0; what is dx or dy is negative
-      float x = arrowx-ballx, y = arrowy-bally, ratio;
+      float x = arrowx-ballx, y = arrowy-bally, ratio = 0;
       radline = pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5);
       if(x==0){
          dx = 0;
