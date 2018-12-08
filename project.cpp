@@ -6,6 +6,7 @@
 int main() {
   Golf h1;
   bool loop = true;
+  bool win  = false;
   char c;
   gfx_open(600, 800, "Putt Putt");
   
@@ -20,7 +21,9 @@ int main() {
            h1.changearrow(c);
         }
        if (c== 32) { //space bar to release ball
-         h1.releaseball();
+         win = h1.releaseball();
+         if(win)
+           goto END;
        }
        if (c == 'q') {
          break;
@@ -30,6 +33,8 @@ int main() {
      usleep(70000);
      gfx_clear();
   }
+  END: {}
+  //h1.displayWin();
 }
     
     
