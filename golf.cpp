@@ -24,6 +24,13 @@ Golf::Golf() {
 
 Golf::~Golf() { }
 
+void resetplacements() {
+   ballx = 300;
+   bally= 740;
+   arrowx= 300;
+   arrowy = 675;
+}
+
 void Golf::display() {
    gfx_color(29, 147, 41); // green course
     gfx_fill_rectangle(tx, ty, l, w);
