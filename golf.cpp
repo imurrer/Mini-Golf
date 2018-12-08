@@ -112,8 +112,10 @@ void Golf::changearrow(char c){
 
 bool Golf::releaseball() {
    bool endGame = false;
-   float dx = (radline*.2);
-   float dy = (radline*.4);
+   float minus=0, dx, dy;
+   elseif(radline <= 357 && 
+   //dx = (radline*.2);
+   //dy = (radline*.4);
    while (true) {
       bool inMill = throughMill();
       bool win = inhole();
@@ -133,6 +135,33 @@ bool Golf::releaseball() {
       cout << "yodel" << ballx << " " << bally << endl;
       display();
       rotateMill();
+      
+      if(radline <= 447.3 && radline > 357){
+         dx = 20-minus; //do angle stuff with direction of ball
+         dy = 20-minus;
+         minus +=1;
+      }
+      if(radline <= 357 && radline > 267){
+         dx = 20-minus; //do angle stuff with direction of ball
+         dy = 20-minus;
+         minus +=2;
+      }
+      if(radline <= 267 && radline > 177){
+         dx = 20-minus; //do angle stuff with direction of ball
+         dy = 20-minus;
+         minus +=3;
+      }
+      if(radline <= 177 && radline > 97){
+         dx = 20-minus; //do angle stuff with direction of ball
+         dy = 20-minus;
+         minus +=4;
+      }
+      if(radline <= 97){
+         dx = 20-minus; //do angle stuff with direction of ball
+         dy = 20-minus;
+         minus +=5;
+      }
+      
       ballx = dx + ballx;
       bally = dy + bally;
      
