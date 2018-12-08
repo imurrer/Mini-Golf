@@ -19,8 +19,8 @@ int main() {
     gfx_color(170, 184, 255);
     gfx_text(210, 350, "Welcome to Mini-Golf!");
     gfx_text(30, 375, "Click to adjust the direction and speed of your ball. This will be shown as the blue line."); 
-    gfx_text(185, 400, "Hit space bar when you are ready to putt.");
-    gfx_text(185, 650, "If you are ready to play, hit p!");
+    gfx_text(170, 400, "Hit space bar when you are ready to putt.");
+    gfx_text(195, 650, "If you are ready to play, hit p!");
     if (gfx_event_waiting()) {
       f= gfx_wait();
       if (f=='p') {
