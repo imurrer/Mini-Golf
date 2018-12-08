@@ -32,7 +32,6 @@ int main() {
   cout << "second WHILE "<< endl;
   while (loop) {
      float release = 0;
-     RESTART: { }
      h1.display();
      h1.rotateMill();
      h1.displayarrow();
@@ -61,21 +60,24 @@ int main() {
   }
   END: {}
   if (win) {
-  gfx_clear();
-  while (windisplay) {
-    gfx_color(170, 184, 255);
-    //gfx_changefont("12x24");
-    gfx_text(275, 400, "WINNER!");
-    gfx_text(250, 700, "Hit a to play again.");
-    if (gfx_event_waiting()) {
-      d = gfx_wait();
-      if (d=='a') {
-        break;
-        goto BEGIN;
+    cout << endl;
+    cout << "END WIN " << endl;
+    gfx_clear();
+    while (windisplay) {
+      gfx_color(170, 184, 255);
+      //gfx_changefont("12x24");
+      gfx_text(275, 400, "WINNER!");
+      gfx_text(250, 700, "Hit a to play again.");
+      if (gfx_event_waiting()) {
+        d = gfx_wait();
+        if (d=='a') {
+          break;
+          goto BEGIN;
+        }
       }
     }
   }
-  }
+  cout << "REAL END" <<endl;
   //h1.displayWin();
 }
     
