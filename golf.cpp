@@ -147,15 +147,28 @@ bool Golf::releaseball() {
             dx = radline*.4;
       }
       else{
-         ratio = y/x;
-         if(dx<0 || x<0)
-            dx = -1*(radline*.4);
-         else
-            dx = (radline*.4);
-         if(dy<0 || y<0)
-            dy = -1*ratio*dx;  
-         else
-            dy = ratio*dx;
+         if(x>y){
+            ratio = y/x;
+            if(dx<0 || x<0)
+               dx = -1*(radline*.4);
+            else
+               dx = (radline*.4);
+            if(dy<0 || y<0)
+               dy = -1*ratio*dx;  
+            else
+               dy = ratio*dx;
+         }
+         else if(y>x){
+            ratio = y/x;
+            if(dy<0 || y<0)
+               dy = -1*(radline*.4); 
+            else
+               dy = 1*(radline*.4);
+            if(dx<0 || x<0)
+               dx = -1*ratio*dy; 
+            else
+               dx = ratio*dy;
+         }
       }
       cout << "ratio" << ratio <<" "<< dx << " " <<dy << endl;
       bool inMill = throughMill();
