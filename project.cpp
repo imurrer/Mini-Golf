@@ -16,11 +16,11 @@ int main() {
   
   BEGIN: { }
   gfx_clear();
-  h1.resetplacements();
+  h1.resetplacements(); // resets ball if user plays again
   
   while (directions) { // message screen for directions
     gfx_color(170, 184, 255);
-    char font[] = "9x15";
+    char font[] = "9x15"; // set new font size
     gfx_changefont(font);
     gfx_text(190, 350, "Welcome to Mini-Golf!");
     gfx_text(80, 375, "Click to adjust the direction and speed of your ball.");
@@ -30,24 +30,20 @@ int main() {
     gfx_text(165, 675, "If you want to quit, hit 'q'.");
     if (gfx_event_waiting()) {
       c= gfx_wait();
-      if (c=='p') { 
+      if (c=='p') { // user plays
         break;
       }
       if (c=='q') {
-        goto END;
+        goto END; // user quits
     }  
    }
   }
-  
-  
-  
-  while (loop) {
+  while (loop) { // start user play
      h1.display();
      h1.rotateMill();
      h1.displayarrow();
      if (gfx_event_waiting()) { // waits for user direction
        c = gfx_wait();
-      // h1.displayarrow();
        if (c== 1) { //user decides to click to change direction of ball
           h1.changearrow(c);
           c = gfx_wait();
@@ -61,7 +57,7 @@ int main() {
            goto END;
          c = gfx_wait();
        }
-       if (c == 'q') { // get rid of screen
+       if (c == 'q') { // user quit, get rid of screen
          break;
        }
      }
