@@ -136,46 +136,46 @@ bool Golf::releaseball() {
    float x = arrowx-ballx, y = arrowy-bally, ratio;
       if(x==0){
          dx = 0;
-         smally = .05*radline;
          if(y<0)
-            dy = -1*radline*.3;
+            dy = -1*radline*.35;
          else
-            dy = radline*.3;
+            dy = radline*.35;
+         smally = .05*dy;
       }
       else if(y==0){
          dy = 0;
-         smallx = .05*radline;
          if(x<0)
-            dx = -1*radline*.3;
+            dx = -1*radline*.35;
          else
-            dx = radline*.3;
+            dx = radline*.35;
+         smallx = .05*dx;
       }
       else{
          if(abs(x)>abs(y)){
             ratio = y/x;
-            smallx = .05*radline;
-            smally = smallx*abs(ratio);
             if(x<0)
-               dx = -1*(radline*.3);
+               dx = -1*(radline*.35);
             else
-               dx = (radline*.3);
+               dx = (radline*.35);
             if(y<0)
                dy = -1*ratio*dx;  
             else
                dy = ratio*dx;
+            smallx = .05*dx;
+            smally = smallx*abs(ratio);
          }
          else if(abs(y)>abs(x)){
             ratio = x/y;
-            smally = .05*radline;
-            smallx = smally*abs(ratio);
             if(dy<0 || y<0)
-               dy = -1*(radline*.3); 
+               dy = -1*(radline*.35); 
             else
-               dy = 1*(radline*.3);
+               dy = 1*(radline*.35);
             if(dx<0 || x<0)
                dx = -1*ratio*dy; 
             else
                dx = ratio*dy;
+            smally = .05*dy;
+            smallx = smally*abs(ratio);
          }
       }
    
