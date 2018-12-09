@@ -128,8 +128,9 @@ void Golf::changearrow(char c){
  }
 
 bool Golf::releaseball() {
+   bool run = true;
    bool endGame = false;
-   float minusX=0, minusY=0, dx = 1, dy = 1, smallx, smally;
+   float minusX=0, minusY=0, dx = 1, dy = 1, smallx, smally, awayx = 0, awayy = 0;
    radline = pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5);
    
    float x = arrowx-ballx, y = arrowy-bally, ratio;
@@ -178,7 +179,7 @@ bool Golf::releaseball() {
          }
       }
    
-   while (abs(smallx)<abs(dx) || abs(smally)<abs(dy)) {    //can't be while dx>0 and dy >0; what if dx or dy is negative or 0
+   while (run){//abs(smallx)<abs(dx) || abs(smally)<abs(dy)) {    //can't be while dx>0 and dy >0; what if dx or dy is negative or 0
       
       bool inMill = throughMill();
       bool win = inhole();
@@ -319,19 +320,23 @@ bool Golf::releaseball() {
       bally = 50+ballrad+3;
    }
       
-   if(dx<0){
-         dx = dx + smallx;
+      if(dx<0){
+         awayx += smallx;
+         dx = dx + awayx;
       }
       else if(dx>0){
-         dx = dx-smallx;
+         awayx += smallx;
+         dx = dx-awayx;
       }
       else if(x!=0) {break;}
       
       if(dy<0){
-         dy = dy + smally;
+         awayy += smally;
+         dy = dy + awayy;
       }
       else if(dy>0){
-         dy = dx=y-smally;
+         awayy += smally;
+         dy = dx=y-awayy;
       }
       else if(y!=0) {break;}
       
@@ -348,6 +353,13 @@ bool Golf::releaseball() {
       arrowx = 300;
       arrowy= 150;
    }
+   
+   if(awayx>abs(dx) && x!=0)
+      run = false;
+   if(awayy>abs(dy))
+      run = false;
+      
+   
   return endGame;
 }
 
