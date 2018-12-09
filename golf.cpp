@@ -340,10 +340,16 @@ bool Golf::releaseball() {
       }
       else if(y!=0) {break;}
       
+      if(awayx>abs(dx) && x!=0)
+         run = false;
+      if(awayy>abs(dy))
+         run = false;
+      
    gfx_flush();
    usleep(75000);
-   gfx_clear();
+   gfx_clear();  
   }
+   
   END: {}
   if ((bally >=550) && (bally <= 750)) {
      arrowx = 300;
@@ -353,13 +359,7 @@ bool Golf::releaseball() {
       arrowx = 300;
       arrowy= 150;
    }
-   
-   if(awayx>abs(dx) && x!=0)
-      run = false;
-   if(awayy>abs(dy))
-      run = false;
-      
-   
+  
   return endGame;
 }
 
