@@ -166,11 +166,11 @@ bool Golf::releaseball() {
          }
          else if(abs(y)>abs(x)){
             ratio = x/y;
-            if(dy<0 || y<0)
+            if(y<0)
                dy = -1*(radline*.35); 
             else
                dy = 1*(radline*.35);
-            if(dx<0 || x<0)
+            if(x<0)
                dx = -1*ratio*dy; 
             else
                dx = ratio*dy;
