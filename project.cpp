@@ -22,8 +22,9 @@ int main() {
     char font[] = "9x15";
     gfx_changefont(font);
     gfx_text(190, 350, "Welcome to Mini-Golf!");
-    gfx_text(10, 375, "Click to adjust the direction and speed of your ball. This will be shown as the blue line."); 
-    gfx_text(150, 400, "Hit space bar when you are ready to putt.");
+    gfx_text(125, 375, "Click to adjust the direction and speed of your ball.");
+    gfx_text(155, 400, "A blue line will be shown to guide you."); 
+    gfx_text(150, 425, "Hit space bar when you are ready to putt.");
     gfx_text(175, 650, "If you are ready to play, hit 'p'!");
     gfx_text(175, 675, "If you want to quit, hit 'q'.");
     if (gfx_event_waiting()) {
