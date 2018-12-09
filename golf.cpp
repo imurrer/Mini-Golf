@@ -50,7 +50,7 @@ void Golf::display() { // displays entire course
     gfx_color(170, 184, 255);  // the windmill herself
     gfx_fill_rectangle(250, 400, 100, 150);
     XPoint pt = {200, 550};
-    XPoint mypoints1[] = { {200, 550}, {250, 400}, {250, 550} }; // struct to make triangle
+    XPoint mypoints1[] = { {200, 550}, {250, 400}, {250, 550} }; // struct to make windmill triangles
     XPoint mypoints2[] = { {350, 550}, {350, 400}, {400, 550} };
     int size1 = sizeof(mypoints1)/sizeof(pt);
     gfx_fill_polygon(mypoints1, size1);
@@ -60,13 +60,12 @@ void Golf::display() { // displays entire course
     gfx_fill_arc(hx, hy, hw, hl, a1, a2);
     gfx_fill_circle(150, 100, 10);
 
-    gfx_color(0,43,4); // dropoff line
+    gfx_color(0,43,4); // dropoff line behind the windmill
     gfx_line(200, 250, 400 , 250);
 }
 
 
 void Golf::rotateMill() { // rotates mill
-  //first top triangle
   XPoint pt = {(short)millcentX, (short)millcentY};
   XPoint mypoints1[] = { {(short)millcentX, (short)millcentY}, {(short)triX1, (short)triY1}, {(short)triX2, (short)triY2} };
   XPoint mypoints2[] = { {(short)millcentX, (short)millcentY}, {(short)triX3, (short)triY3}, {(short)triX4, (short)triY4} };
@@ -74,12 +73,14 @@ void Golf::rotateMill() { // rotates mill
   gfx_color(192, 242, 247);
   gfx_fill_polygon(mypoints1, size1);
   gfx_fill_polygon(mypoints2, size1);
+  //first top triangle
   angmill1+=M_PI/6;
   angmill2+=M_PI/6;
-  triX1 = triX1+(radmill*(cos(angmill1-M_PI/6)-cos(angmill1)));
+  triX1 = triX1+(radmill*(cos(angmill1-M_PI/6)-cos(angmill1)));      //rotate triangles around center point by pi/6
   triY1 = triY1+(radmill*(sin(angmill1-M_PI/6)-sin(angmill1)));
   triX2 = triX2+(radmill*(cos(angmill2-M_PI/6)-cos(angmill2)));
   triY2 = triY2+(radmill*(sin(angmill2-M_PI/6)-sin(angmill2)));
+  //bottom triangle
   angmill3+=M_PI/6;
   angmill4+=M_PI/6;
   triX3 = triX3+(radmill*(cos(angmill3-M_PI/6)-cos(angmill3)));
@@ -118,12 +119,15 @@ void Golf::changearrow(char c){   // changes guide line based on user click
       gfx_flush();
  }
 
-bool Golf::releaseball() { // starts motion
+bool Golf::releaseball() { //moves the ball
    bool run = true;
    bool endGame = false;
    float minusX=0, minusY=0, dx = 1, dy = 1, smallx, smally, awayx = 0, awayy = 0;
-   radline = pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5);
+   radline = pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5);   //the length of the arrow
    
+   //sets the change in x and y directions proportional to the ratio between x and y
+   //smallx and smally are values proportional to the dx and dy values that will be subtracted from dx and dy
+   //this will slow the balls down in the direction that the arrow was pointing
    float x = arrowx-ballx, y = arrowy-bally, ratio;
       if(x==0){
          dx = 0;
@@ -170,17 +174,17 @@ bool Golf::releaseball() { // starts motion
          }
       }
    
-   while (run){//abs(smallx)<abs(dx) || abs(smally)<abs(dy)) {    //can't be while dx>0 and dy >0; what if dx or dy is negative or 0
-      
+   while (run) {     //continues to run until dx or dy values are decreasing by an amount larger than themselves
       bool inMill = throughMill();
       bool win = inhole();
+      //places ball on other side of windmill if it gets through mill
       if(inMill) {
          display();
          ballx = 300;
          bally = 250-ballrad-1;
          inMill = false;
-         cout << "In mill " << endl;
       }
+      //leaves the loop if the ball gets in the end hoole
       if(win){
          display();
          endGame = true;
@@ -188,134 +192,40 @@ bool Golf::releaseball() { // starts motion
       }
       display();
       rotateMill();
-      /*
-      if(radline > 357){
-        if(dx!=0){
-           dx = dx-minusX; //do angle stuff with direction of ball
-           if(dx>0)
-              minusX+=1;
-           else if(dx<0)
-              minusX-=1;
-         }
-         if(dy!=0){
-           dy = dy-minusY;
-           if(dy>0)
-              minusY+=1;
-           else if(dy<0)
-              minusY-=1;
-         }
-      }
-      else if(radline <= 357 && radline > 267){
-         if(dx!=0){
-           dx = dx-minusX; //do angle stuff with direction of ball
-           if(dx>0)
-              minusX+=1.5;
-           else if(dx<0)
-              minusX-=1.5;
-         }
-         if(dy!=0){
-           dy = dy-minusY;
-           if(dy>0)
-              minusY+=1.5;
-           else if(dy<0)
-              minusY-=1.5;
-         }
-      }
-      else if(radline <= 267 && radline > 177){
-         if(dx!=0){
-           dx = dx-minusX; //do angle stuff with direction of ball
-           if(dx>0)
-              minusX+=2;
-           else if(dx<0)
-              minusX-=2;
-         }
-         if(dy!=0){
-           dy = dy-minusY;
-           if(dy>0)
-              minusY+=2;
-           else if(dy<0)
-              minusY-=2;
-         }
-      }
-      else if(radline <= 177 && radline > 97){
-         if(dx!=0){
-           dx = dx-minusX; //do angle stuff with direction of ball
-           if(dx>0)
-              minusX+=2.5;
-           else if(dx<0)
-              minusX-=2.5;
-         }
-         if(dy!=0){
-           dy = dy-minusY;
-           if(dy>0)
-              minusY+=2.5;
-           else if(dy<0)
-              minusY-=2.5;
-         }
-      }
-      else if(radline <= 97){
-         if(dx!=0){
-           dx = dx-minusX; //do angle stuff with direction of ball
-           if(dx>0)
-              minusX+=3;
-           else if(dx<0)
-              minusX-=3;
-         }
-         if(dy!=0){
-           dy = dy-minusY;
-           if(dy>0)
-              minusY+=3;
-           else if(dy<0)
-              minusY-=3;
-         }
-      }*/
-      //change the center location of the ball
-      cout << endl;
-      cout << "Ball location: " << ballx << " " << bally << endl;
-      cout << "Arrow Location: " << arrowx << " " << arrowy << endl;
-      //cout << "Minus values: " << minusX << " " << minusY << endl;
-      cout << "Ratio: " << ratio << endl;
-      cout << "dx and dy: " << dx << " " << dy << endl;
-      cout << "Smallx and smally: " << smallx << " " << smally << endl;
-      cout << "awayx and awayy: " << awayx << " " << awayy << endl;
       
+      //change the center location of the ball
       ballx = dx + ballx;
       bally = dy + bally;
       
-
-   if (ballx >= 500-ballrad){
-      dx = -dx;
-      //minusX = -minusX;
-      ballx = 500-ballrad-3;
-   }
-   else if(ballx <= 100+ballrad){
-      dx = -dx;
-      //minusX = -minusX;
-      ballx = 100+ballrad+3;
-   }
-   if (bally >= 250-ballrad && bally < 400){
-      dy = -dy;
-      //minusY = -minusY;
-      bally = 250-ballrad-3;
-   }
-   else if(bally <= 550+ballrad && bally > 300){ 
-      dy = -dy;
-      //minusY = -minusY;
-      bally = 550+ballrad+3;
-   }
-   else if(bally >= 750-ballrad){
-      dy = -dy;
-      //minusY = -minusY;
-      bally = 750-ballrad-3;
+      //reverses direction of the ball and resets it to edge if it hits a boundary
+      if (ballx >= 500-ballrad){       
+         dx = -dx;
+         ballx = 500-ballrad-3;
+      }
+      else if(ballx <= 100+ballrad){
+         dx = -dx;
+         ballx = 100+ballrad+3;
+      }
+      if (bally >= 250-ballrad && bally < 400){
+         dy = -dy;
+         bally = 250-ballrad-3;
+      }
+      else if(bally <= 550+ballrad && bally > 300){ 
+         dy = -dy;
+         bally = 550+ballrad+3;
+      }
+      else if(bally >= 750-ballrad){
+         dy = -dy;
+         bally = 750-ballrad-3;  
+      }
+      else if(bally <= 50+ballrad){
+         dy = -dy;
+         bally = 50+ballrad+3;
+      }
       
-   }
-   else if(bally <= 50+ballrad){
-      //minusY = -minusY;
-      dy = -dy;
-      bally = 50+ballrad+3;
-   }
-      
-      if(dx<0){
+      //makes the absolute value of the change in x and y decrease each time the ball moves by smallx or smally
+      //slow ball down
+      if(dx<0){         
          awayx += smallx;
          dx = dx + awayx;
       }
@@ -335,6 +245,7 @@ bool Golf::releaseball() { // starts motion
       }
       else if(y!=0) {break;}
       
+      //check if the change in x or y direction is smaller than the amount by which they are getting smaller
       if(awayx>abs(dx) && x!=0)
          run = false;
       if(awayy>abs(dy))
