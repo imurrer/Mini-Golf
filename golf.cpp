@@ -252,7 +252,7 @@ bool Golf::releaseball() { //moves the ball
          run = false;
       
    gfx_flush();
-   usleep(40000);
+   usleep(70000);
    gfx_clear();  
   }
    
