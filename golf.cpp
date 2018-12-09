@@ -129,12 +129,13 @@ void Golf::changearrow(char c){
 
 bool Golf::releaseball() {
    bool endGame = false;
-   float minusX=0, minusY=0, dx = 1, dy = 1;
+   float minusX=0, minusY=0, dx = 1, dy = 1, smallx, smally;
    radline = pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5);
    
    float x = arrowx-ballx, y = arrowy-bally, ratio;
       if(x==0){
          dx = 0;
+         smally = .05*radline;
          if(y<0)
             dy = -1*radline*.2;
          else
@@ -142,6 +143,7 @@ bool Golf::releaseball() {
       }
       else if(y==0){
          dy = 0;
+         smallx = .05*radline;
          if(x<0)
             dx = -1*radline*.2;
          else
@@ -150,6 +152,8 @@ bool Golf::releaseball() {
       else{
          if(abs(x)>abs(y)){
             ratio = y/x;
+            smallx = .05*radline;
+            smally = smallx*ratio;
             if(x<0)
                dx = -1*(radline*.2);
             else
@@ -161,6 +165,8 @@ bool Golf::releaseball() {
          }
          else if(abs(y)>abs(x)){
             ratio = x/y;
+            smally = .05*radline;
+            smallx = smally*ratio;
             if(dy<0 || y<0)
                dy = -1*(radline*.2); 
             else
@@ -279,6 +285,22 @@ bool Golf::releaseball() {
       
       ballx = dx + ballx;
       bally = dy + bally;
+      if(dx<0){
+         dx = dx + smallx;
+      }
+      else if(dx>0){
+         dx = dx-smallx;
+      }
+      else if(x!=0) {break;}
+      
+      if(dy<0){
+         dy = dy + smally;
+      }
+      else if(dy>0){
+         dy = dx=y-smally;
+      }
+      else if(y!=0) {break;}
+      
 
    if (ballx >= 500-ballrad){
       dx = -dx;
