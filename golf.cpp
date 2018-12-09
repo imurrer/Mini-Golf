@@ -355,6 +355,7 @@ bool Golf::releaseball() {
   }
    
   END: {}
+   /*
   if ((bally >=550) && (bally <= 750)) {
      arrowx = 300;
      arrowy = 675;
@@ -362,7 +363,7 @@ bool Golf::releaseball() {
    if ((bally <=250) && (bally >=50)) {
       arrowx = 300;
       arrowy= 150;
-   }
+   }*/
   
   return endGame;
 }
