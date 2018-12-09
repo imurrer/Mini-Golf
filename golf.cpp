@@ -140,7 +140,7 @@ bool Golf::releaseball() {
             dy = -1*radline*.35;
          else
             dy = radline*.35;
-         smally = .05*dy;
+         smally = abs(.05*dy);
       }
       else if(y==0){
          dy = 0;
@@ -148,7 +148,7 @@ bool Golf::releaseball() {
             dx = -1*radline*.35;
          else
             dx = radline*.35;
-         smallx = .05*dx;
+         smallx = abs(.05*dx);
       }
       else{
          if(abs(x)>abs(y)){
@@ -161,8 +161,8 @@ bool Golf::releaseball() {
                dy = -1*ratio*dx;  
             else
                dy = ratio*dx;
-            smallx = .05*dx;
-            smally = smallx*abs(ratio);
+            smallx = abs(.05*dx);
+            smally = abs(smallx*ratio);
          }
          else if(abs(y)>abs(x)){
             ratio = x/y;
@@ -174,8 +174,8 @@ bool Golf::releaseball() {
                dx = -1*ratio*dy; 
             else
                dx = ratio*dy;
-            smally = .05*dy;
-            smallx = smally*abs(ratio);
+            smally = abs(.05*dy);
+            smallx = abs(smally*ratio);
          }
       }
    
@@ -279,6 +279,7 @@ bool Golf::releaseball() {
          }
       }*/
       //change the center location of the ball
+      cout << endl;
       cout << "Ball location: " << ballx << " " << bally << endl;
       cout << "Arrow Location: " << arrowx << " " << arrowy << endl;
       //cout << "Minus values: " << minusX << " " << minusY << endl;
