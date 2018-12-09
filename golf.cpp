@@ -178,7 +178,7 @@ bool Golf::releaseball() {
          }
       }
    
-   while (abs(minusX)<abs(dx) || abs(minusY)<abs(dy)) {    //can't be while dx>0 and dy >0; what if dx or dy is negative or 0
+   while (abs(smallx)<abs(dx) || abs(smally)<abs(dy)) {    //can't be while dx>0 and dy >0; what if dx or dy is negative or 0
       
       bool inMill = throughMill();
       bool win = inhole();
