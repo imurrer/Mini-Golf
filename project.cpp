@@ -59,7 +59,7 @@ int main() {
        }
      }
      gfx_flush();
-     usleep(40000);
+     usleep(30000);
      gfx_clear();
   }
   END: {}
