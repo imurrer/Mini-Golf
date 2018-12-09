@@ -153,7 +153,7 @@ bool Golf::releaseball() {
          if(abs(x)>abs(y)){
             ratio = y/x;
             smallx = .05*radline;
-            smally = smallx*ratio;
+            smally = smallx*abs(ratio);
             if(x<0)
                dx = -1*(radline*.2);
             else
@@ -166,7 +166,7 @@ bool Golf::releaseball() {
          else if(abs(y)>abs(x)){
             ratio = x/y;
             smally = .05*radline;
-            smallx = smally*ratio;
+            smallx = smally*abs(ratio);
             if(dy<0 || y<0)
                dy = -1*(radline*.2); 
             else
