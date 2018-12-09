@@ -188,6 +188,7 @@ bool Golf::releaseball() {
          ballx = 300;
          bally = 250-ballrad-1;
          inMill = false;
+         cout << "In mill " << endl;
       }
       if(win){
          display();
