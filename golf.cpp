@@ -1,5 +1,5 @@
 //golf.cpp
-// Lab 12 Implementation
+//Lab 12 Implementation
 //Bella Murrer and Hannah Sarkey
 
 #include "golf.h"
@@ -66,7 +66,7 @@ void Golf::display() { // displays entire course
 
 
 void Golf::rotateMill() { // rotates mill
-  XPoint pt = {(short)millcentX, (short)millcentY};
+  XPoint pt = {(short)millcentX, (short)millcentY};   
   XPoint mypoints1[] = { {(short)millcentX, (short)millcentY}, {(short)triX1, (short)triY1}, {(short)triX2, (short)triY2} };
   XPoint mypoints2[] = { {(short)millcentX, (short)millcentY}, {(short)triX3, (short)triY3}, {(short)triX4, (short)triY4} };
   int size1 = sizeof(mypoints1)/sizeof(pt);
@@ -188,7 +188,7 @@ bool Golf::releaseball() { //moves the ball
       if(win){
          display();
          endGame = true;
-         goto END;
+         goto END;      //get to end of the method if user has won
       }
       display();
       rotateMill();
@@ -251,29 +251,31 @@ bool Golf::releaseball() { //moves the ball
       if(awayy>abs(dy))
          run = false;
       
-   gfx_flush();
-   usleep(70000);
-   gfx_clear();  
-  }
+      //clear screen in between each movement of the ball  
+      gfx_flush();
+      usleep(70000);
+      gfx_clear();  
+    }
    
-  END: {}
+  END: {}     // comes here if user won
   
-  if ((bally >=550) && (bally <= 750)) { // resets guideline in bottom green
+  if ((bally >=550) && (bally <= 750)) { // resets guide line in bottom green
      arrowx = 300;
      arrowy = 675;
-   }
-   if ((bally <=250) && (bally >=50)) { // resets guideline in top green
-      arrowx = 300;
-      arrowy= 150;
-   }
+  }
+  if ((bally <=250) && (bally >=50)) { // resets guide line in top green
+     arrowx = 300;
+     arrowy= 150;
+  }
   
   return endGame;
 }
 
-bool Golf::throughMill() { // checks to see if ball went through mill
+// checks to see if ball went through mill
+bool Golf::throughMill() { 
   bool inMill = false;
-  if(triY1!=550 && triY4!=550) {
-    if ((ballx > 287.5) && (ballx < 312.5)) {
+  if(triY1!=550 && triY4!=550) {    //will only go through mill if the mill's triangles aren't blocking hole
+    if ((ballx > 287.5) && (ballx < 312.5)) {   //must be within range of the mill's hole
       if (bally-1.5*ballrad < 550 && bally+ballrad > 250) {
         inMill = true;
       }
@@ -282,7 +284,8 @@ bool Golf::throughMill() { // checks to see if ball went through mill
   return inMill;
 }
 
-bool Golf::inhole() { // checks to see if any of the four quadrants of the ball went into the hole and returns true
+// checks to see if any of the four quadrants of the ball went into the hole and returns true if so
+bool Golf::inhole() { 
    bool win = false;
    if ((ballx >=135) && (ballx+ballrad<= 165) && (bally+ballrad <=115) && (bally >= 85)) {
          win = true;
@@ -298,8 +301,3 @@ bool Golf::inhole() { // checks to see if any of the four quadrants of the ball 
       }
    return win;
 }
-   
-      
-
-
-
