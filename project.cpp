@@ -45,7 +45,6 @@ int main() {
      h1.display();
      h1.rotateMill();
      h1.displayarrow();
-     c = gfx_wait();
      if (gfx_event_waiting()) { // waits for user direction
        c = gfx_wait();
       // h1.displayarrow();
@@ -54,10 +53,10 @@ int main() {
           c = gfx_wait();
         }
        if (c== 32) { //space bar to release ball
-         win = h1.releaseball();
          times++;
          cout << endl;
-         cout << times << endl;;
+         cout << times << endl;
+         win = h1.releaseball();
          if(win) // if user wins go to end screen
            goto END;
          c = gfx_wait();
