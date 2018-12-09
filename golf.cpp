@@ -3,7 +3,7 @@
 
 #include "golf.h"
 
-Golf::Golf() {
+Golf::Golf() { // initialize private objects
    ballx = 300, bally = 740, ballrad = 7.5;
    bx = 100, by = 550;
    mx = 200, my = 250;
@@ -22,35 +22,34 @@ Golf::Golf() {
    radline =pow(pow(arrowx-ballx, 2) + pow(arrowy-bally,2), 0.5), angline = M_PI/2;
 }
 
-Golf::~Golf() { }
+Golf::~Golf() { } // destructor
 
-void Golf::resetplacements() {
+void Golf::resetplacements() { // reset placement of ball if user decides to play again
    ballx = 300;
    bally= 740;
    arrowx= 300;
    arrowy = 675;
 }
 
-void Golf::displayinhole() {
+void Golf::displayinhole() { // displays ball in hole when users gets it in
    ballx = 150;
    bally = 100;
    display();
 }
 
-void Golf::display() {
+void Golf::display() { // displays entire course
    gfx_color(29, 147, 41); // green course
     gfx_fill_rectangle(tx, ty, l, w);
     gfx_fill_rectangle(mx, my, mw, ml);
     gfx_fill_rectangle(bx, by, l, w);
     
-    //Ms. Ball
-    gfx_color(255, 255, 255);
+    gfx_color(255, 255, 255); // draw ball
     gfx_fill_circle(ballx, bally, ballrad);
        
-    gfx_color(170, 184, 255);  //the windmill herself
+    gfx_color(170, 184, 255);  // the windmill herself
     gfx_fill_rectangle(250, 400, 100, 150);
     XPoint pt = {200, 550};
-    XPoint mypoints1[] = { {200, 550}, {250, 400}, {250, 550} };
+    XPoint mypoints1[] = { {200, 550}, {250, 400}, {250, 550} }; // struct to make triangle
     XPoint mypoints2[] = { {350, 550}, {350, 400}, {400, 550} };
     int size1 = sizeof(mypoints1)/sizeof(pt);
     gfx_fill_polygon(mypoints1, size1);
@@ -65,7 +64,7 @@ void Golf::display() {
 }
 
 
-void Golf::rotateMill() {
+void Golf::rotateMill() { // rotates mill
   //first top triangle
   XPoint pt = {(short)millcentX, (short)millcentY};
   XPoint mypoints1[] = { {(short)millcentX, (short)millcentY}, {(short)triX1, (short)triY1}, {(short)triX2, (short)triY2} };
@@ -88,46 +87,37 @@ void Golf::rotateMill() {
   triY4 = triY4+(radmill*(sin(angmill4-M_PI/6)-sin(angmill4)));
 }
 
-void Golf::displayarrow() {
+void Golf::displayarrow() { // displays guide line
    gfx_color(24, 60, 242);
- //  if ((bally >=550) && (bally <= 750)) {
    gfx_line(ballx, bally, arrowx, arrowy);
-//   }
-  // if ((bally <=250) && (bally >=50)) {
-    //  gfx_line(ballx, bally, 300, 150);
-  // }
 }
 
-void Golf::changearrow(char c){  
-      //display();
-      //rotateMill();
+void Golf::changearrow(char c){   // changes guide line based on user click 
          arrowx = gfx_xpos();
          arrowy = gfx_ypos();
-         if (arrowx > 500) {
+         if (arrowx > 500) { // if user clicks too far right
            arrowx = 500;
           }
-          if (arrowx < 100) {
+          if (arrowx < 100) { // if user clicks off course to the left
             arrowx = 100;
           }
-          if ((bally > 550)&& (bally <750)) {
+          if ((bally > 550)&& (bally <750)) { // if user click outside of bottom green
              if (arrowy < 550)
                 arrowy = 550;
              if (arrowy > 750)
                 arrowy = 750;
           }
-         if ((bally > 50) && (bally <250)) {
+         if ((bally > 50) && (bally <250)) { // if user clicks outside of top green
             if (arrowy <50) 
                arrowy = 50;
             if (arrowy >250)
                arrowy = 250;
          }
-      gfx_line(ballx, bally, arrowx, arrowy);
+      gfx_line(ballx, bally, arrowx, arrowy); // draw new guideline
       gfx_flush();
-     // usleep(70000);
-     // gfx_clear();
  }
 
-bool Golf::releaseball() {
+bool Golf::releaseball() { // starts motion
    bool run = true;
    bool endGame = false;
    float minusX=0, minusY=0, dx = 1, dy = 1, smallx, smally, awayx = 0, awayy = 0;
@@ -356,11 +346,11 @@ bool Golf::releaseball() {
    
   END: {}
   
-  if ((bally >=550) && (bally <= 750)) {
+  if ((bally >=550) && (bally <= 750)) { // resets guideline in bottom green
      arrowx = 300;
      arrowy = 675;
    }
-   if ((bally <=250) && (bally >=50)) {
+   if ((bally <=250) && (bally >=50)) { // resets guideline in top green
       arrowx = 300;
       arrowy= 150;
    }
@@ -368,7 +358,7 @@ bool Golf::releaseball() {
   return endGame;
 }
 
-bool Golf::throughMill() {
+bool Golf::throughMill() { // checks to see if ball went through mill
   bool inMill = false;
   if(triY1!=550 && triY4!=550) {
     if ((ballx > 287.5) && (ballx < 312.5)) {
@@ -380,7 +370,7 @@ bool Golf::throughMill() {
   return inMill;
 }
 
-bool Golf::inhole() {
+bool Golf::inhole() { // checks to see if any of the four quadrants of the ball went into the hole and returns true
    bool win = false;
    if ((ballx >=135) && (ballx+ballrad<= 165) && (bally+ballrad <=115) && (bally >= 85)) {
          win = true;
