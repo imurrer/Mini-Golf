@@ -19,11 +19,13 @@ int main() {
   
   while (directions) { // message screen for directions
     gfx_color(170, 184, 255);
-    gfx_text(210, 350, "Welcome to Mini-Golf!");
-    gfx_text(30, 375, "Click to adjust the direction and speed of your ball. This will be shown as the blue line."); 
-    gfx_text(170, 400, "Hit space bar when you are ready to putt.");
-    gfx_text(195, 650, "If you are ready to play, hit 'p'!");
-    gfx_text(195, 675, "If you want to quit, hit 'q'.");
+    char font[] = "9x15";
+    gfx_changefont(font);
+    gfx_text(190, 350, "Welcome to Mini-Golf!");
+    gfx_text(10, 375, "Click to adjust the direction and speed of your ball. This will be shown as the blue line."); 
+    gfx_text(150, 400, "Hit space bar when you are ready to putt.");
+    gfx_text(175, 650, "If you are ready to play, hit 'p'!");
+    gfx_text(175, 675, "If you want to quit, hit 'q'.");
     if (gfx_event_waiting()) {
       c= gfx_wait();
       if (c=='p') { 
@@ -65,11 +67,9 @@ int main() {
     gfx_clear();
     while (windisplay) {
       gfx_color(170, 184, 255);
-      char font[] = "12x24";
-      gfx_changefont(font);
       gfx_text(275, 400, "WINNER!");
-      gfx_text(210, 700, "Hit 'a' to play again.");
-      gfx_text(210, 725, "Hit 'q' to quit.");
+      gfx_text(225, 700, "Hit 'a' to play again.");
+      gfx_text(225, 725, "Hit 'q' to quit.");
       if (gfx_event_waiting()) {
         c = gfx_wait();
         if (c=='a') { // if user decides to play again
