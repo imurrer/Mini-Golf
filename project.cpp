@@ -61,7 +61,6 @@ int main() {
   }
   END: {}
   if (win) { // if user wins display a new message
-    h1.display();
     gfx_clear();
     while (windisplay) {
       gfx_color(170, 184, 255);
