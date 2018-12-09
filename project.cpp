@@ -49,7 +49,6 @@ int main() {
           c = gfx_wait();
         }
        if (c== 32) { //space bar to release ball
-         times++;
          win = h1.releaseball();
          if(win) // if user wins go to end screen
            goto END;
