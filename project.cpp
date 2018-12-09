@@ -56,7 +56,7 @@ int main() {
        }
      }
      gfx_flush();
-     usleep(70000);
+     usleep(40000);
      gfx_clear();
   }
   END: {}
