@@ -1,4 +1,5 @@
 //project.cpp
+// Lab 12 Main Program
 // Bella Murrer and Hannah Sarkey
 
 #include "golf.h"
