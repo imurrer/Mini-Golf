@@ -45,6 +45,7 @@ int main() {
      h1.display();
      h1.rotateMill();
      h1.displayarrow();
+     c = gfx_wait();
      if (gfx_event_waiting()) { // waits for user direction
        c = gfx_wait();
       // h1.displayarrow();
