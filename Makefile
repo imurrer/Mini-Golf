@@ -1,4 +1,6 @@
-#Makefile for Golf Game
+#Makefile for Lab 12 - Golf Game
+#Isobel Murrer and Hannah Sarkey
+#12/8/18
 
 CMP = g++ -std=c++11
 MAIN = project
