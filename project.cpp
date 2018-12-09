@@ -14,7 +14,6 @@ int main() {
 
 	gfx_open(600, 800, "Putt Putt");
 
-BEGIN: { }
 		 gfx_clear();
 		 h1.resetplacements(); // resets ball if user plays again
 
@@ -62,7 +61,6 @@ BEGIN: { }
 			 usleep(30000);
 			 gfx_clear();
 		 }
-END: {}
 	  if (win) { // if user wins display a new message
 		  h1.displayinhole();
 		  usleep(40000);
