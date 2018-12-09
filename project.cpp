@@ -22,7 +22,7 @@ int main() {
     char font[] = "9x15";
     gfx_changefont(font);
     gfx_text(190, 350, "Welcome to Mini-Golf!");
-    gfx_text(100, 375, "Click to adjust the direction and speed of your ball.");
+    gfx_text(80, 375, "Click to adjust the direction and speed of your ball.");
     gfx_text(145, 400, "A blue line will be shown to guide you."); 
     gfx_text(140, 425, "Hit space bar when you are ready to putt.");
     gfx_text(165, 650, "If you are ready to play, hit 'p'!");
