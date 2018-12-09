@@ -285,21 +285,6 @@ bool Golf::releaseball() {
       
       ballx = dx + ballx;
       bally = dy + bally;
-      if(dx<0){
-         dx = dx + smallx;
-      }
-      else if(dx>0){
-         dx = dx-smallx;
-      }
-      else if(x!=0) {break;}
-      
-      if(dy<0){
-         dy = dy + smally;
-      }
-      else if(dy>0){
-         dy = dx=y-smally;
-      }
-      else if(y!=0) {break;}
       
 
    if (ballx >= 500-ballrad){
@@ -333,6 +318,23 @@ bool Golf::releaseball() {
       dy = -dy;
       bally = 50+ballrad+3;
    }
+      
+   if(dx<0){
+         dx = dx + smallx;
+      }
+      else if(dx>0){
+         dx = dx-smallx;
+      }
+      else if(x!=0) {break;}
+      
+      if(dy<0){
+         dy = dy + smally;
+      }
+      else if(dy>0){
+         dy = dx=y-smally;
+      }
+      else if(y!=0) {break;}
+      
    gfx_flush();
    usleep(75000);
    gfx_clear();
