@@ -339,7 +339,7 @@ bool Golf::releaseball() {
       }
       else if(dy>0){
          awayy += smally;
-         dy = dx=y-awayy;
+         dy = dy-awayy;
       }
       else if(y!=0) {break;}
       
