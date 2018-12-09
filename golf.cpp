@@ -183,7 +183,7 @@ bool Golf::releaseball() {
       }
       display();
       rotateMill();
-      
+      /*
       if(radline > 357){
         if(dx!=0){
            dx = dx-minusX; //do angle stuff with direction of ball
@@ -263,7 +263,7 @@ bool Golf::releaseball() {
            else if(dy<0)
               minusY-=3;
          }
-      }
+      }*/
       //change the center location of the ball
       cout << "Ball location: " << ballx << " " << bally << endl;
       cout << "Arrow Location: " << arrowx << " " << arrowy << endl;
@@ -275,33 +275,34 @@ bool Golf::releaseball() {
 
    if (ballx >= 500-ballrad){
       dx = -dx;
-      minusX = -minusX;
+      //minusX = -minusX;
       ballx = 500-ballrad-3;
    }
    else if(ballx <= 100+ballrad){
       dx = -dx;
-      minusX = -minusX;
+      //minusX = -minusX;
       ballx = 100+ballrad+3;
    }
    if (bally >= 250-ballrad && bally < 400){
       dy = -dy;
-      minusY = -minusY;
+      //minusY = -minusY;
       bally = 250-ballrad-3;
    }
    else if(bally <= 550+ballrad && bally > 300){ 
       dy = -dy;
-      minusY = -minusY;
+      //minusY = -minusY;
       bally = 550+ballrad+3;
    }
    else if(bally >= 750-ballrad){
       dy = -dy;
-      minusY = -minusY;
+      //minusY = -minusY;
       bally = 750-ballrad-3;
       
    }
    else if(bally <= 50+ballrad){
-      bally = 50+ballrad+3;
+      //minusY = -minusY;
       dy = -dy;
+      bally = 50+ballrad+3;
    }
    gfx_flush();
    usleep(75000);
