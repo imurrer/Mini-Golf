@@ -11,7 +11,6 @@ int main() {
   bool directions = true;
   bool windisplay = true;
   char c, d, f;
-  int times=0;
   
   gfx_open(600, 800, "Putt Putt");
   
@@ -51,8 +50,6 @@ int main() {
         }
        if (c== 32) { //space bar to release ball
          times++;
-         cout << endl;
-         cout << times << endl;
          win = h1.releaseball();
          if(win) // if user wins go to end screen
            goto END;
