@@ -259,16 +259,16 @@ bool Golf::releaseball() { //moves the ball
 
 	END: {}     // comes here if user won
 
-	  if ((bally >=550) && (bally <= 750)) { // resets guide line in bottom green
-		  arrowx = 300;
-		  arrowy = 675;
-	  }
-	  if ((bally <=250) && (bally >=50)) { // resets guide line in top green
-		  arrowx = 300;
-		  arrowy= 150;
-	  }
+	if ((bally >=550) && (bally <= 750)) { // resets guide line in bottom green
+		arrowx = 300;
+		arrowy = 675;
+	}
+	if ((bally <=250) && (bally >=50)) { // resets guide line in top green
+		arrowx = 300;
+		arrowy= 150;
+	}
 
-	  return endGame;
+	return endGame;
 }
 
 // checks to see if ball went through mill
