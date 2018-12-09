@@ -10,6 +10,7 @@ int main() {
   bool directions = true;
   bool windisplay = true;
   char c, d, f;
+  int times=0;
   
   gfx_open(600, 800, "Putt Putt");
   
@@ -38,7 +39,7 @@ int main() {
    }
   }
   
-  int times=0;
+  
   
   while (loop) {
      h1.display();
