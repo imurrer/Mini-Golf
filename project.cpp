@@ -37,6 +37,9 @@ int main() {
     }  
    }
   }
+  
+  int times=0;
+  
   while (loop) {
      h1.display();
      h1.rotateMill();
@@ -50,6 +53,9 @@ int main() {
         }
        if (c== 32) { //space bar to release ball
          win = h1.releaseball();
+         times++;
+         cout << endl;
+         cout << times << endl;;
          if(win) // if user wins go to end screen
            goto END;
          c = gfx_wait();
