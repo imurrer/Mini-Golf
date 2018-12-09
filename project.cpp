@@ -70,7 +70,6 @@ int main() {
       gfx_text(275, 400, "WINNER!");
       gfx_text(250, 700, "Hit 'a' to play again.");
       gfx_text(250, 725, "Hit 'q' to quit.");
-      char font[] = "12x24";
       if (gfx_event_waiting()) {
         c = gfx_wait();
         if (c=='a') { // if user decides to play again
