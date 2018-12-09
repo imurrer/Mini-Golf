@@ -31,6 +31,12 @@ void Golf::resetplacements() {
    arrowy = 675;
 }
 
+void Golf::displayinhole() {
+   ballx = 150;
+   bally = 100;
+   display();
+}
+
 void Golf::display() {
    gfx_color(29, 147, 41); // green course
     gfx_fill_rectangle(tx, ty, l, w);
