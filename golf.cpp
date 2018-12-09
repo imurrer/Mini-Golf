@@ -283,6 +283,8 @@ bool Golf::releaseball() {
       //cout << "Minus values: " << minusX << " " << minusY << endl;
       cout << "Ratio: " << ratio << endl;
       cout << "dx and dy: " << dx << " " << dy << endl;
+      cout << "Smallx and smally: " << smallx << " " << smally << endl;
+      cout << "awayx and awayy: " << awayx << " " << awayy << endl;
       
       ballx = dx + ballx;
       bally = dy + bally;
