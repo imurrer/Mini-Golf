@@ -1,4 +1,5 @@
 //golf.h
+// Lab 12 Header File
 //Bella Murrer and Hannah Sarkey
 
 #include <iostream>
