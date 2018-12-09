@@ -267,7 +267,8 @@ bool Golf::releaseball() {
       //change the center location of the ball
       cout << "Ball location: " << ballx << " " << bally << endl;
       cout << "Arrow Location: " << arrowx << " " << arrowy << endl;
-      cout << "Minus values: " << minusX << " " << minusY << endl;
+      //cout << "Minus values: " << minusX << " " << minusY << endl;
+      cout << "Ratio: " << ratio << endl;
       cout << "dx and dy: " << dx << " " << dy << endl;
       
       ballx = dx + ballx;
